@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How We Work — Hyves.Tech</title>
+  <meta name="description" content="One repeatable model for smallholder farmers in emerging markets. See how Hyves.Tech turns field data into farmer income across any crop, any country.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.jpg">
+  <style>
+    /* Page-specific styles */
+    .page-hero {
+      background: var(--navy); color: #fff;
+      padding: 5rem 2rem 6rem; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; right: -100px; top: 0;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(197,220,79,0.1) 0%, transparent 70%);
+    }
+    .page-hero-inner { max-width: 1280px; margin: 0 auto; position: relative; }
+    .page-hero h1 {
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -1.5px; margin-bottom: 1.5rem;
+      max-width: 900px;
+    }
+    .page-hero h1 .accent { color: var(--lime); }
+    .page-hero p {
+      font-size: 19px; line-height: 1.65;
+      color: rgba(255,255,255,0.85);
+      max-width: 640px;
+    }
+
+    /* Step blocks */
+    .step-block {
+      padding: 4.5rem 2rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .step-block:nth-child(even) { background: var(--gray-bg); }
+    .step-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 4rem; align-items: start;
+    }
+    .step-num-big {
+      font-size: 140px; font-weight: 800;
+      color: var(--lime-deep); line-height: 1;
+      letter-spacing: -6px; margin-bottom: 1rem;
+    }
+    .step-block:nth-child(even) .step-num-big { color: var(--navy); }
+    .step-eyebrow {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--lime-deep); margin-bottom: 0.75rem;
+    }
+    .step-title {
+      font-size: clamp(28px, 3.5vw, 38px);
+      font-weight: 800; line-height: 1.15;
+      letter-spacing: -0.8px; margin-bottom: 1.25rem;
+      color: var(--navy);
+    }
+    .step-desc {
+      font-size: 17px; line-height: 1.7;
+      color: var(--ink-mid); margin-bottom: 2rem;
+    }
+    .step-features {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin-bottom: 2rem;
+    }
+    .step-feature {
+      padding-left: 16px; border-left: 3px solid var(--lime);
+    }
+    .step-feature-title {
+      font-size: 14px; font-weight: 700;
+      color: var(--navy); margin-bottom: 4px;
+    }
+    .step-feature-body {
+      font-size: 13px; line-height: 1.55;
+      color: var(--ink-mid);
+    }
+    .step-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .step-tag {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 6px 14px;
+      background: var(--navy); color: #fff;
+    }
+    .step-block:nth-child(even) .step-tag { background: #fff; color: var(--navy); border: 1px solid var(--navy); }
+
+    @media (max-width: 900px) {
+      .step-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .step-num-big { font-size: 90px; }
+      .step-features { grid-template-columns: 1fr; }
+    }
+
+    /* Why it works */
+    .why-section { background: var(--navy-deep); color: #fff; padding: 6rem 2rem; }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2rem; margin-top: 3rem;
+    }
+    .why-card {
+      background: var(--navy); padding: 2.5rem;
+      border-left: 4px solid var(--lime);
+    }
+    .why-icon {
+      width: 48px; height: 48px;
+      background: var(--lime); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .why-icon svg { width: 24px; height: 24px; }
+    .why-title {
+      font-size: 22px; font-weight: 800;
+      margin-bottom: 0.75rem; letter-spacing: -0.4px;
+    }
+    .why-body {
+      font-size: 15px; line-height: 1.65;
+      color: rgba(255,255,255,0.8);
+    }
+    @media (max-width: 700px) { .why-grid { grid-template-columns: 1fr; } }
+
+    /* Crops table */
+    .crops-table {
+      margin-top: 3rem; border: 1px solid var(--border-dark);
+    }
+    .crops-row {
+      display: grid; grid-template-columns: 80px 1fr 1.5fr 1.5fr 100px;
+      align-items: center; padding: 1.5rem 1.75rem;
+      border-bottom: 1px solid var(--border-dark);
+      transition: background 0.15s;
+    }
+    .crops-row:last-child { border-bottom: none; }
+    .crops-row:hover { background: var(--gray-bg); }
+    .crops-row.header {
+      background: var(--navy); color: #fff;
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .crops-row.header:hover { background: var(--navy); }
+    .crop-status-cell {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      padding: 4px 10px; text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .status-live { background: var(--lime); color: var(--navy-deep); }
+    .status-next { background: #fff; color: var(--ink-mid); border: 1px solid var(--border-dark); }
+    .crop-name-cell { font-size: 17px; font-weight: 700; color: var(--navy); }
+    .crop-geo-cell { font-size: 14px; color: var(--ink-mid); }
+    .crop-waste-cell { font-size: 13px; color: var(--lime-deep); font-weight: 600; }
+    .crop-arrow { font-size: 18px; color: var(--lime-deep); text-align: right; }
+
+    @media (max-width: 800px) {
+      .crops-row { grid-template-columns: 80px 1fr; gap: 1rem; }
+      .crop-geo-cell, .crop-waste-cell, .crop-arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  Based in Wageningen Food Valley · Working with WUR &amp; RMIT Vietnam · <a href="partner.html">Join the hive →</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.jpg" alt="Hyves.Tech bee logo">
+      <span class="nav-logo-text">Hyves<span class="dot">.</span>Tech</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="how-we-work.html" class="active">How We Work</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="partner.html">Partner</a></li>
+    </ul>
+    <a href="partner.html" class="nav-cta">Join the Hive</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Our Model</div>
+    <h1>One model.<br>Any crop.<br><span class="accent">Any emerging market.</span></h1>
+    <p>A repeatable stack that turns isolated smallholder farmers into connected, traceable, circular producers — without requiring them to become technology experts.</p>
+  </div>
+</section>
+
+<!-- STEP 01 -->
+<section class="step-block">
+  <div class="step-inner">
+    <div>
+      <div class="step-num-big">01</div>
+      <div class="step-eyebrow">See the Farm</div>
+      <div class="step-title">From manual walking<br>to continuous data.</div>
+    </div>
+    <div>
+      <p class="step-desc">A farmer walking a 1-hectare lime orchard spends 5–6 hours a day just observing. We replace that with field robots and IoT sensors that generate continuous, structured data — so the farmer sees problems earlier and acts smarter.</p>
+      <div class="step-features">
+        <div class="step-feature">
+          <div class="step-feature-title">Autonomous robots</div>
+          <div class="step-feature-body">Designed for canal-based and narrow-plot orchards in Long An.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">Computer vision</div>
+          <div class="step-feature-body">Real-time pest, disease, and weed coverage detection.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">Soil sensors</div>
+          <div class="step-feature-body">pH, moisture, NPK, and electrical conductivity captured continuously.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">Zero manual logging</div>
+          <div class="step-feature-body">Data flows directly to the platform — the farmer just walks the field.</div>
+        </div>
+      </div>
+      <div class="step-tags">
+        <span class="step-tag">Field Robotics</span>
+        <span class="step-tag">IoT Sensors</span>
+        <span class="step-tag">Computer Vision</span>
+        <span class="step-tag">ROS 2</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 02 -->
+<section class="step-block">
+  <div class="step-inner">
+    <div>
+      <div class="step-num-big">02</div>
+      <div class="step-eyebrow">Know the Chain</div>
+      <div class="step-title">Every harvest.<br>Every spray.<br>Every plot.</div>
+    </div>
+    <div>
+      <p class="step-desc">Every harvest record, spray decision, soil reading, and quality assessment is captured in our platform — a living, auditable record of what happens on the farm. This data is the foundation for everything that follows.</p>
+      <div class="step-features">
+        <div class="step-feature">
+          <div class="step-feature-title">Plot-to-export traceability</div>
+          <div class="step-feature-body">Farm-level data follows every kilo of fruit through the chain.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">Real-time dashboards</div>
+          <div class="step-feature-body">Power BI views for farmers, co-ops, buyers, and certification bodies.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">System integration</div>
+          <div class="step-feature-body">Connects with ERP, quality labs, and logistics systems.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">Offline-capable</div>
+          <div class="step-feature-body">Works in farms with limited or intermittent connectivity.</div>
+        </div>
+      </div>
+      <div class="step-tags">
+        <span class="step-tag">Traceability Platform</span>
+        <span class="step-tag">Power BI</span>
+        <span class="step-tag">Data Integration</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 03 -->
+<section class="step-block">
+  <div class="step-inner">
+    <div>
+      <div class="step-num-big">03</div>
+      <div class="step-eyebrow">Open the Market</div>
+      <div class="step-title">Compliance becomes<br>a competitive advantage.</div>
+    </div>
+    <div>
+      <p class="step-desc">An isolated farmer cannot prove his fruit is safe, sustainable, or traceable. A connected farmer — with a data record behind him — can. Our platform turns compliance from a burden into a competitive advantage, opening export markets that were previously inaccessible.</p>
+      <div class="step-features">
+        <div class="step-feature">
+          <div class="step-feature-title">EUDR-ready</div>
+          <div class="step-feature-body">Deforestation compliance data exportable on demand.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">GLOBALG.A.P. supported</div>
+          <div class="step-feature-body">Food safety and good practice documentation built in.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">Sustainability reporting</div>
+          <div class="step-feature-body">For EU buyers, retailers, and regulators.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">Cooperative aggregation</div>
+          <div class="step-feature-body">Individual farms, collective credentials, shared market access.</div>
+        </div>
+      </div>
+      <div class="step-tags">
+        <span class="step-tag">EUDR Compliance</span>
+        <span class="step-tag">GLOBALG.A.P.</span>
+        <span class="step-tag">Export Access</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 04 -->
+<section class="step-block">
+  <div class="step-inner">
+    <div>
+      <div class="step-num-big">04</div>
+      <div class="step-eyebrow">Close the Loop</div>
+      <div class="step-title">Waste becomes<br>a second income.</div>
+    </div>
+    <div>
+      <p class="step-desc">What the farmer discards after harvest — peel, pulp, husk, seed — has real value. But only if it's traceable. Our platform generates the data that makes waste streams into certified, marketable ingredients: cold-pressed citrus oil, cacao fiber, coffee flour. A second income built on data the farmer already has.</p>
+      <div class="step-features">
+        <div class="step-feature">
+          <div class="step-feature-title">Citrus peel valorization</div>
+          <div class="step-feature-body">Cold-pressed lime oil, D-Limonene, and dried fiber pathways.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">Cacao side streams</div>
+          <div class="step-feature-body">Pulp and husk turned into food ingredients and fiber.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">Premium positioning</div>
+          <div class="step-feature-body">Traceability data turns commodity waste into certified ingredients.</div>
+        </div>
+        <div class="step-feature">
+          <div class="step-feature-title">Direct buyer connection</div>
+          <div class="step-feature-body">Linked to European ingredient buyers via Wageningen Food Valley.</div>
+        </div>
+      </div>
+      <div class="step-tags">
+        <span class="step-tag">Circular Economy</span>
+        <span class="step-tag">Waste Valorization</span>
+        <span class="step-tag">Ingredient Markets</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT WORKS -->
+<section class="why-section">
+  <div class="section-inner">
+    <span class="eyebrow light">Why This Works</span>
+    <h2 class="section-title" style="color:#fff;">Designed for the farmer.<br><span style="color:var(--lime);">Built to scale.</span></h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E2A4A" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <div class="why-title">Farmer-first design</div>
+        <div class="why-body">Technology that doesn't improve the farmer's life is not worth building. Every decision starts with what the farmer needs, not what's technically interesting.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E2A4A" stroke-width="2.5"><circle cx="9" cy="7" r="4"/><circle cx="17" cy="7" r="2.5"/><circle cx="9" cy="17" r="2.5"/><circle cx="17" cy="17" r="2.5"/><path d="M9 7l8 0M9 7l0 10M9 17l8 0M17 7l0 10"/></svg></div>
+        <div class="why-title">The network effect</div>
+        <div class="why-body">One farmer's data is useful. One hundred farmers' data is powerful. Waste streams only become viable at collective scale. The hive works because the bees share.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E2A4A" stroke-width="2.5"><path d="M21 15a4 4 0 01-4 4H7l-4 4V7a4 4 0 014-4h10a4 4 0 014 4z"/></svg></div>
+        <div class="why-title">Repeatable by design</div>
+        <div class="why-body">The platform and model are crop-agnostic. Built for cacao in Ecuador, adapted for lime in Vietnam. The next crop takes weeks, not years.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E2A4A" stroke-width="2.5"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></div>
+        <div class="why-title">Rooted in Wageningen</div>
+        <div class="why-body">Based in Wageningen Food Valley, in close collaboration with WUR. We understand what European buyers, regulators, and funders need — and deliver it through teams who understand the farmer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CROPS TABLE -->
+<section>
+  <div class="section-inner">
+    <span class="eyebrow">Crops &amp; Markets</span>
+    <h2 class="section-title">Live today.<br><span class="accent">Scaling tomorrow.</span></h2>
+    <p class="section-lead">The model is proven across two crops and two continents. We're actively building toward the next.</p>
+
+    <div class="crops-table">
+      <div class="crops-row header">
+        <div>Status</div>
+        <div>Crop</div>
+        <div>Geography</div>
+        <div>Waste Stream Potential</div>
+        <div></div>
+      </div>
+      <div class="crops-row">
+        <div><span class="crop-status-cell status-live">Live</span></div>
+        <div class="crop-name-cell">Cacao</div>
+        <div class="crop-geo-cell">Ecuador · West Africa next</div>
+        <div class="crop-waste-cell">Pulp &amp; husk → food ingredients</div>
+        <div class="crop-arrow">→</div>
+      </div>
+      <div class="crops-row">
+        <div><span class="crop-status-cell status-live">Live</span></div>
+        <div class="crop-name-cell">Lime</div>
+        <div class="crop-geo-cell">Vietnam · Long An</div>
+        <div class="crop-waste-cell">Peel → cold-pressed oil &amp; fiber</div>
+        <div class="crop-arrow">→</div>
+      </div>
+      <div class="crops-row">
+        <div><span class="crop-status-cell status-next">Next</span></div>
+        <div class="crop-name-cell">Coffee</div>
+        <div class="crop-geo-cell">Ethiopia · Vietnam</div>
+        <div class="crop-waste-cell">Cherry pulp → cascara &amp; flour</div>
+        <div class="crop-arrow">→</div>
+      </div>
+      <div class="crops-row">
+        <div><span class="crop-status-cell status-next">Next</span></div>
+        <div class="crop-name-cell">Mango</div>
+        <div class="crop-geo-cell">West Africa · SE Asia</div>
+        <div class="crop-waste-cell">Peel &amp; seed → oil &amp; fiber</div>
+        <div class="crop-arrow">→</div>
+      </div>
+      <div class="crops-row">
+        <div><span class="crop-status-cell status-next">Next</span></div>
+        <div class="crop-name-cell">Coconut</div>
+        <div class="crop-geo-cell">Indonesia · Philippines</div>
+        <div class="crop-waste-cell">Husk &amp; shell → fiber &amp; activated carbon</div>
+        <div class="crop-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Ready to bring the hive<br>to your crop?</h2>
+    </div>
+    <a href="partner.html" class="btn btn-outline-dark btn-arrow">Join the Hive</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.jpg" alt="Hyves.Tech">
+        <div class="footer-brand-name">Hyves<span style="color:var(--lime);">.</span>Tech</div>
+        <p class="footer-tagline">When the hive works,<br>everyone benefits.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How We Work</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="partner.html">Partner With Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li>Ede-Wageningen</li>
+          <li>Ho Chi Minh City</li>
+          <li>Guayaquil</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@hyves.tech">info@hyves.tech</a></li>
+          <li><a href="partner.html">Join the Hive</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hyves.Tech. All rights reserved.</span>
+      <span>Ede-Wageningen, Netherlands</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

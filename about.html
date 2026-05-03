@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Hyves.Tech</title>
+  <meta name="description" content="Hyves.Tech is based in Ede-Wageningen, working with WUR and RMIT Vietnam to build circular agri-food infrastructure for smallholder farmers in emerging markets.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.jpg">
+  <style>
+    .page-hero { background: var(--navy); color: #fff; padding: 5rem 2rem 6rem; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; right: -100px; top: 0; width: 500px; height: 500px; background: radial-gradient(circle, rgba(197,220,79,0.1) 0%, transparent 70%); }
+    .page-hero-inner { max-width: 1280px; margin: 0 auto; position: relative; }
+    .page-hero h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 1.5rem; max-width: 900px; }
+    .page-hero h1 .accent { color: var(--lime); }
+    .page-hero p { font-size: 19px; line-height: 1.65; color: rgba(255,255,255,0.85); max-width: 640px; }
+
+    /* Origin */
+    .origin-section { padding: 5rem 2rem; }
+    .origin-grid {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.4fr 1fr;
+      gap: 4rem; align-items: start;
+    }
+    .origin-text { font-size: 17px; line-height: 1.8; color: var(--ink-mid); }
+    .origin-text p { margin-bottom: 1.25rem; }
+    .origin-text strong { color: var(--navy); font-weight: 700; }
+    .name-card {
+      background: var(--navy); color: #fff;
+      padding: 2.5rem; position: relative;
+      border-left: 4px solid var(--lime);
+    }
+    .name-card-eyebrow {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--lime); margin-bottom: 1rem;
+    }
+    .name-card h3 {
+      font-size: 24px; font-weight: 800; line-height: 1.25;
+      margin-bottom: 1.25rem; letter-spacing: -0.5px;
+    }
+    .name-card p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.85); }
+    @media (max-width: 800px) { .origin-grid { grid-template-columns: 1fr; } }
+
+    /* Universities */
+    .uni-section { background: var(--navy-deep); color: #fff; padding: 5rem 2rem; }
+    .uni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .uni-card {
+      background: var(--navy); padding: 2.5rem;
+      position: relative; border-top: 4px solid var(--lime);
+    }
+    .uni-location {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--lime); margin-bottom: 1rem;
+    }
+    .uni-name {
+      font-size: 24px; font-weight: 800; line-height: 1.2;
+      margin-bottom: 1rem; letter-spacing: -0.5px;
+    }
+    .uni-body {
+      font-size: 15px; line-height: 1.7;
+      color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;
+    }
+    .uni-collab-list { list-style: none; }
+    .uni-collab-list li {
+      font-size: 13px; color: rgba(255,255,255,0.9);
+      padding: 8px 0 8px 16px; position: relative;
+      border-top: 1px solid var(--border);
+    }
+    .uni-collab-list li::before {
+      content: ''; position: absolute; left: 0; top: 50%;
+      transform: translateY(-50%); width: 6px; height: 6px;
+      background: var(--lime);
+    }
+    @media (max-width: 700px) { .uni-grid { grid-template-columns: 1fr; } }
+
+    /* Team */
+    .team-section { padding: 5rem 2rem; background: var(--gray-bg); }
+    .team-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .team-card {
+      background: #fff; padding: 2rem;
+      display: flex; gap: 1.5rem; align-items: flex-start;
+      border-bottom: 4px solid var(--lime);
+    }
+    .team-card.dashed {
+      background: transparent; border: 2px dashed var(--ink-light);
+      border-bottom: 2px dashed var(--ink-light);
+    }
+    .team-avatar {
+      width: 64px; height: 64px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800; flex-shrink: 0;
+    }
+    .av-g { background: var(--lime); color: var(--navy-deep); }
+    .av-t { background: var(--navy); color: var(--lime); }
+    .av-a { background: #FAEEDA; color: #633806; }
+    .av-d { background: var(--gray-bg); color: var(--ink-light); border: 2px dashed var(--ink-light); }
+    .team-name { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .team-role { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--lime-deep); margin-bottom: 6px; }
+    .team-loc { font-size: 12px; color: var(--ink-light); margin-bottom: 10px; }
+    .team-bio { font-size: 13px; line-height: 1.6; color: var(--ink-mid); }
+    @media (max-width: 700px) { .team-grid { grid-template-columns: 1fr; } }
+
+    /* Values */
+    .values-section { background: var(--navy); color: #fff; padding: 5rem 2rem; }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border); margin-top: 3rem;
+      border: 1px solid var(--border);
+    }
+    .value-cell {
+      background: var(--navy); padding: 2.5rem 2rem;
+    }
+    .value-num {
+      font-size: 36px; font-weight: 800; color: var(--lime);
+      line-height: 1; margin-bottom: 1rem; letter-spacing: -1.5px;
+    }
+    .value-title {
+      font-size: 20px; font-weight: 800; margin-bottom: 0.75rem;
+      letter-spacing: -0.3px;
+    }
+    .value-body { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.8); }
+    @media (max-width: 700px) { .values-grid { grid-template-columns: 1fr; } }
+
+    /* Locations */
+    .loc-section { padding: 5rem 2rem; }
+    .loc-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .loc-card {
+      background: #fff; padding: 2rem;
+      border: 1px solid var(--border-dark);
+      border-top: 4px solid var(--lime);
+    }
+    .loc-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--lime-deep); margin-bottom: 1rem; }
+    .loc-city { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 4px; letter-spacing: -0.4px; }
+    .loc-country { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-light); margin-bottom: 1rem; }
+    .loc-role { font-size: 14px; line-height: 1.65; color: var(--ink-mid); }
+    @media (max-width: 700px) { .loc-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  Based in Wageningen Food Valley · Working with WUR &amp; RMIT Vietnam · <a href="partner.html">Join the hive →</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.jpg" alt="Hyves.Tech bee logo">
+      <span class="nav-logo-text">Hyves<span class="dot">.</span>Tech</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="how-we-work.html">How We Work</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="partner.html">Partner</a></li>
+    </ul>
+    <a href="partner.html" class="nav-cta">Join the Hive</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">About Hyves.Tech</div>
+    <h1>We named ourselves<br>after <span class="accent">the hive</span><br>for a reason.</h1>
+    <p>A beehive works because every bee contributes, communicates, and shares in the result. That's the model we're building for smallholder farmers in emerging markets.</p>
+  </div>
+</section>
+
+<!-- ORIGIN -->
+<section class="origin-section">
+  <div class="origin-grid">
+    <div class="origin-text">
+      <span class="eyebrow">Our Origin</span>
+      <h2 class="section-title">Built from a simple<br>observation.</h2>
+      <p>The farmers who feed the world are the least supported part of the food system. They grow the cacao in your chocolate, the limes in your drink, the coffee in your cup — and they have no visibility into what happens after the fruit leaves their hands.</p>
+      <p>We started with <strong>Cacao-Tech in Ecuador</strong> — building digital infrastructure for a farmer-first traceability platform in the cacao value chain. We saw what changed when farmers had data: better decisions, better prices, and for the first time, a way to turn their waste streams into income.</p>
+      <p>That experience became a model. Now we're applying it to lime farming in Vietnam, and building toward a platform that works for <strong>any smallholder crop, in any emerging market</strong> where the same structural gaps exist.</p>
+      <p>We're based in <strong>Ede-Wageningen</strong> — home to Wageningen University &amp; Research, the world's leading institution for sustainable agriculture — with a development hub in Ho Chi Minh City and field operations in Ecuador.</p>
+    </div>
+    <div class="name-card">
+      <div class="name-card-eyebrow">The Name</div>
+      <h3>"Hyves" comes from the hive.</h3>
+      <p>Bees working together. Each contributing. Sharing information. Producing something none could create alone.</p>
+      <p style="margin-top:1rem;"><strong style="color:var(--lime);">That's not just a metaphor. It's the architecture of what we build.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- UNIVERSITIES -->
+<section class="uni-section">
+  <div class="section-inner">
+    <span class="eyebrow light">Our Research Foundation</span>
+    <h2 class="section-title" style="color:#fff;">Two universities.<br>Two continents.<br><span style="color:var(--lime);">One model.</span></h2>
+
+    <div class="uni-grid">
+      <div class="uni-card">
+        <div class="uni-location">Ede-Wageningen · Netherlands</div>
+        <div class="uni-name">Wageningen University &amp; Research</div>
+        <div class="uni-body">The world's leading agricultural university is our neighbour and research partner. WUR grounds our work in crop science, circular food systems, and post-harvest valorization — and connects us directly to the Wageningen Food Valley industry network.</div>
+        <ul class="uni-collab-list">
+          <li>Research collaboration</li>
+          <li>Student projects &amp; theses</li>
+          <li>Joint funding applications</li>
+          <li>Advisory relationship</li>
+        </ul>
+      </div>
+      <div class="uni-card">
+        <div class="uni-location">Ho Chi Minh City · Vietnam</div>
+        <div class="uni-name">RMIT University Vietnam</div>
+        <div class="uni-body">Our engineering partner on the ground in Vietnam. RMIT student teams build and test the field robots, sensors, and software running in the lime orchards of Long An — connecting academic engineering directly to real farming conditions.</div>
+        <ul class="uni-collab-list">
+          <li>Field robotics development</li>
+          <li>Capstone project partnerships</li>
+          <li>Computer vision research</li>
+          <li>Student engineering teams</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="section-inner">
+    <span class="eyebrow">The Team</span>
+    <h2 class="section-title">Three locations.<br><span class="accent">One mission.</span></h2>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar av-g">HT</div>
+        <div>
+          <div class="team-name">Founder &amp; Director</div>
+          <div class="team-role">Strategy &amp; Partnerships</div>
+          <div class="team-loc">Ede-Wageningen, Netherlands</div>
+          <div class="team-bio">Dutch-led management with deep roots in agri-food, circular economy, and emerging market development. The bridge between European buyers, funders, and farmers on the ground.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar av-t">VN</div>
+        <div>
+          <div class="team-name">Development Lead</div>
+          <div class="team-role">Software &amp; Platform</div>
+          <div class="team-loc">Ho Chi Minh City, Vietnam</div>
+          <div class="team-bio">Leads the dedicated development team in Vietnam — software engineers, data specialists, and UI/UX designers building the traceability platform and farmer dashboard.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar av-a">EC</div>
+        <div>
+          <div class="team-name">Field Partner</div>
+          <div class="team-role">Cacao-Tech, Ecuador</div>
+          <div class="team-loc">Guayaquil, Ecuador</div>
+          <div class="team-bio">On-the-ground coordination for the cacao value chain — farmer registration, data collection, and the relationship work that makes traceability real, not just theoretical.</div>
+        </div>
+      </div>
+      <div class="team-card dashed">
+        <div class="team-avatar av-d">+</div>
+        <div>
+          <div class="team-name" style="color:var(--ink-mid);">We're growing</div>
+          <div class="team-role" style="color:var(--ink-light);">Next crop · Next country</div>
+          <div class="team-bio">We partner with field operators, agronomists, and local cooperatives as we enter new crops and markets. If that's you, we'd like to talk.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="section-inner">
+    <span class="eyebrow light">What We Believe</span>
+    <h2 class="section-title" style="color:#fff;">Three principles<br>that shape <span style="color:var(--lime);">everything we build.</span></h2>
+
+    <div class="values-grid">
+      <div class="value-cell">
+        <div class="value-num">01</div>
+        <div class="value-title">Farmer first</div>
+        <div class="value-body">Technology that doesn't improve the farmer's life is not worth building. Every decision starts with what the farmer needs, not what's technically interesting.</div>
+      </div>
+      <div class="value-cell">
+        <div class="value-num">02</div>
+        <div class="value-title">Waste is an asset</div>
+        <div class="value-body">Every crop produces more than the part that gets sold. The rest is not a problem — it's a resource waiting for the right infrastructure to give it value.</div>
+      </div>
+      <div class="value-cell">
+        <div class="value-num">03</div>
+        <div class="value-title">The network is the product</div>
+        <div class="value-body">One farm's data is a record. A hundred farms' data is a market. We build for the collective, because that's where the real value lives.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="loc-section">
+  <div class="section-inner">
+    <span class="eyebrow">Where We Are</span>
+    <h2 class="section-title">From Wageningen<br>to <span class="accent">the field.</span></h2>
+
+    <div class="loc-grid">
+      <div class="loc-card">
+        <div class="loc-dot"></div>
+        <div class="loc-city">Ede-Wageningen</div>
+        <div class="loc-country">Netherlands</div>
+        <div class="loc-role">Headquarters. Strategy, partnerships, and European market access. Home of WUR and Wageningen Food Valley.</div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-dot"></div>
+        <div class="loc-city">Ho Chi Minh City</div>
+        <div class="loc-country">Vietnam</div>
+        <div class="loc-role">Development hub. Platform engineering, data, and UI/UX. In partnership with RMIT University Vietnam.</div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-dot"></div>
+        <div class="loc-city">Guayaquil</div>
+        <div class="loc-country">Ecuador</div>
+        <div class="loc-role">Field operations. Cacao-Tech farmer network and traceability platform deployment.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Want to join<br>the hive?</h2>
+    </div>
+    <a href="partner.html" class="btn btn-outline-dark btn-arrow">Join the Hive</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.jpg" alt="Hyves.Tech">
+        <div class="footer-brand-name">Hyves<span style="color:var(--lime);">.</span>Tech</div>
+        <p class="footer-tagline">When the hive works,<br>everyone benefits.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How We Work</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="partner.html">Partner With Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li>Ede-Wageningen</li>
+          <li>Ho Chi Minh City</li>
+          <li>Guayaquil</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@hyves.tech">info@hyves.tech</a></li>
+          <li><a href="partner.html">Join the Hive</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hyves.Tech. All rights reserved.</span>
+      <span>Ede-Wageningen, Netherlands</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
