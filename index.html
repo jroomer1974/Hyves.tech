@@ -3,12 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hyves.Tech — Connecting Smallholder Farmers to the Future</title>
-  <meta name="description" content="Hyves.Tech connects smallholder farmers in emerging markets to the tools, data, and markets they need to thrive — and turns what they waste into what they earn.">
+  <title>Hyves.Tech — From Farm to Value</title>
+  <meta name="description" content="From Farm to Value — Hyves.Tech helps farmers, cooperatives and agribusinesses capture data, build transparent supply chains and unlock new value from every part of the crop.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="logo.jpg">
+  <style>
+    /* Award banner */
+    .award-bar {
+      background: var(--lime); color: var(--navy-deep);
+      padding: 12px 2rem; text-align: center;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.03em;
+    }
+    .award-bar a { color: var(--navy-deep); text-decoration: underline; }
+
+    /* What we offer */
+    .offer-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem;
+    }
+    .offer-card {
+      background: #fff; border: 1px solid var(--border-dark);
+      border-top: 4px solid var(--lime); padding: 2rem;
+    }
+    .offer-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--lime-deep); margin-bottom: 1rem; }
+    .offer-title { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 0.75rem; letter-spacing: -0.3px; }
+    .offer-body { font-size: 14px; line-height: 1.65; color: var(--ink-mid); margin-bottom: 1.25rem; }
+    .offer-list { list-style: none; }
+    .offer-list li { font-size: 13px; color: var(--ink-mid); padding: 6px 0 6px 14px; position: relative; border-top: 1px solid var(--border-dark); }
+    .offer-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 5px; height: 5px; background: var(--lime-deep); }
+
+    /* Engage CTAs */
+    .engage-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2.5rem; }
+    .engage-card {
+      border: 1px solid var(--border-dark); padding: 1.5rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .engage-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--lime-deep); }
+    .engage-title { font-size: 17px; font-weight: 700; color: var(--navy); }
+    .engage-desc { font-size: 13px; color: var(--ink-mid); line-height: 1.55; flex: 1; }
+    .engage-link { font-size: 13px; font-weight: 700; color: var(--navy); }
+
+    @media (max-width: 800px) { .offer-grid, .engage-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  From Farm to Value &middot; Agrifood Technology for Emerging Agricultural Markets &middot; <a href="partner.html">Work With Us &rarr;</a>
+</div>
 
 <!-- NAV -->
 <nav class="nav">
@@ -21,9 +63,9 @@
       <li><a href="how-we-work.html">How We Work</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="partner.html">Partner</a></li>
+      <li><a href="partner.html">Work With Us</a></li>
     </ul>
-    <a href="partner.html" class="nav-cta">Join the Hive</a>
+    <a href="partner.html" class="nav-cta">Book a Call</a>
   </div>
 </nav>
 
@@ -31,312 +73,331 @@
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow">Smallholder agriculture · First-mile traceability</div>
-      <h1>Technology Built<br>for the <span class="accent">Farmer</span><br>Driven by Data<br>Closing the Loop</h1>
-      <p>Hyves.Tech connects smallholder farmers in emerging markets to the tools, data, and markets they need to thrive — and turns what they waste into what they earn.</p>
+      <div class="hero-eyebrow">Agrifood Technology for Emerging Agricultural Markets</div>
+      <h1>From Farm<br>to <span class="accent">Value.</span></h1>
+      <p>Combining agrifood expertise and technology to create new value from agricultural side streams — for farmers, cooperatives and agribusinesses across emerging agricultural markets.</p>
       <div class="hero-actions">
-        <a href="how-we-work.html" class="btn btn-primary btn-arrow">Explore the Journey</a>
+        <a href="how-we-work.html" class="btn btn-primary btn-arrow">Explore Our Solutions</a>
         <a href="projects.html" class="btn btn-outline-light">See Our Projects</a>
       </div>
     </div>
     <div class="hero-visual">
-      <!-- VAK 1 — Groot — Cacao pulp video -->
       <div class="hero-photo hero-photo-1 photo-orchard" style="overflow:hidden; padding:0; position:relative;">
         <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; display:block;">
           <source src="EC - Cacao pulp.MOV" type="video/mp4">
+          <source src="EC - Cacao pulp.MOV" type="video/quicktime">
         </video>
-        <span class="hero-photo-tag" style="position:absolute; bottom:12px; left:12px;"><span class="lime-dot"></span>Ecuador · Cacao Pulp</span>
+        <span class="hero-photo-tag" style="position:absolute; bottom:12px; left:12px;"><span class="lime-dot"></span>Ecuador &middot; Cacao-Tech</span>
       </div>
-      <!-- VAK 2 — Klein links — Farmer foto -->
       <div class="hero-photo hero-photo-2 photo-farmer" style="overflow:hidden; padding:0; position:relative;">
         <img src="farm1.jpg" alt="Smallholder farmer" style="width:100%; height:100%; object-fit:cover; display:block;">
         <span class="hero-photo-tag" style="position:absolute; bottom:12px; left:12px;"><span class="lime-dot"></span>Smallholder farmer</span>
       </div>
-      <!-- VAK 3 — Klein rechts — Field robot -->
       <div class="hero-photo hero-photo-3 photo-tech" style="overflow:hidden; padding:0; position:relative;">
-        <img src="Farm Robot.png" alt="Field robot in action" style="width:100%; height:100%; object-fit:cover; display:block;">
-        <span class="hero-photo-tag" style="position:absolute; bottom:12px; left:12px;"><span class="lime-dot"></span>Field robot in action</span>
+        <img src="Farm Robot.png" alt="Farm technology" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <span class="hero-photo-tag" style="position:absolute; bottom:12px; left:12px;"><span class="lime-dot"></span>Farm technology in development &middot; Vietnam</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- WHY HYVES EXISTS -->
+<section style="background:#fff; padding:5rem 2rem; border-bottom:1px solid var(--border-dark);">
+  <div style="max-width:860px; margin:0 auto; text-align:center;">
+    <span class="eyebrow">Our Purpose</span>
+    <h2 class="section-title" style="margin-bottom:1.5rem;">Create value from<br>agricultural side streams.</h2>
+    <p style="font-size:20px; line-height:1.75; color:var(--ink-mid); margin-bottom:1.5rem;">Every year, billions of kilos of agricultural side streams are discarded while farmers face increasing pressure on margins, transparency and sustainability &mdash; often without the data infrastructure to respond.</p>
+    <p style="font-size:17px; line-height:1.75; color:var(--ink-mid); margin-bottom:2rem;">That is the problem Hyves exists to solve. Our purpose is to create new value from agricultural side streams &mdash; for farmers, cooperatives, buyers and the planet.</p>
+    <div style="display:inline-grid; grid-template-columns:auto 1fr; gap:0.5rem 1.5rem; text-align:left; margin:0 auto 1.5rem;">
+      <div style="font-size:13px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.08em; padding-top:0.15rem;">Our purpose</div>
+      <div style="font-size:15px; color:var(--ink-mid);">Create value from agricultural side streams.</div>
+      <div style="font-size:13px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.08em; padding-top:0.15rem; white-space:nowrap;">Our tools</div>
+      <div style="font-size:15px; color:var(--ink-mid);">Agrifood expertise &middot; Software &middot; AI &middot; Hardware &middot; Circular innovation</div>
+    </div>
+    <div style="font-size:13px; color:var(--ink-light); text-align:center;">Examples include: citrus peel &middot; cacao pulp &middot; agricultural residues</div>
+  </div>
+</section>
 
+<!-- THREE PILLARS -->
+<section style="background: var(--gray-bg);">
+  <div class="section-inner">
+    <span class="eyebrow">How We Do It</span>
+    <h2 class="section-title">Three capabilities.<br><span class="accent">One connected story.</span></h2>
+    <div class="offer-grid">
+      <div class="offer-card">
+        <div class="offer-num">&#127807; From Farm</div>
+        <div class="offer-title">Capture Farm Data</div>
+        <div class="offer-body">The right tool for the crop &mdash; mobile apps, sensors, cameras and future field robotics. The farmer gets visibility; the supply chain gets structured, reliable data.</div>
+        <ul class="offer-list">
+          <li>Farmer registration</li>
+          <li>IoT sensors</li>
+          <li>Computer vision</li>
+          <li>Future field robotics</li>
+        </ul>
+      </div>
+      <div class="offer-card">
+        <div class="offer-num">&#128279; Through the Chain</div>
+        <div class="offer-title">Create Transparency</div>
+        <div class="offer-body">Every harvest, spray decision and quality reading captured in one platform &mdash; a traceable, auditable record that enables better decisions at every step of the chain.</div>
+        <ul class="offer-list">
+          <li>Traceability</li>
+          <li>Dashboards</li>
+          <li>Decision support</li>
+          <li>Data integration</li>
+        </ul>
+      </div>
+      <div class="offer-card">
+        <div class="offer-num">&#9851; To Value</div>
+        <div class="offer-title">Create Value</div>
+        <div class="offer-body">Traceable side streams become new products and applications and new revenue &mdash; turning what was waste into a second income stream for farmers and cooperatives.</div>
+        <ul class="offer-list">
+          <li>Citrus peel &rarr; oils</li>
+          <li>Cacao pulp opportunities</li>
+          <li>Side streams &rarr; new products</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- SDG STRIP -->
-<div style="background:#f4f6f4; padding:24px 0; border-top:1px solid #e0e4e0; border-bottom:1px solid #e0e4e0;">
-  <div style="max-width:1100px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:20px;">
+<!-- PROOF — Featured Projects -->
+<section class="dark">
+  <div class="section-inner">
+    <span class="eyebrow light">Proof, Not Promises</span>
+    <h2 class="section-title" style="color:#fff;">Featured Projects</h2>
+    <p class="section-lead" style="color:rgba(255,255,255,0.8);">Real crops. Real farmers. Real outcomes. Every project adds a new layer of proof to the model.</p>
 
-    <!-- Left: SDG Wheel -->
-    <a href="https://sdgs.un.org/goals" target="_blank" style="flex-shrink:0;">
-      <img src="SDG_logo_Wheel.png" alt="SDG Wheel" style="width:64px;height:64px;object-fit:contain;">
-    </a>
-
-    <!-- Center: SDG icons -->
-    <div style="flex:1; display:flex; gap:12px; flex-wrap:wrap; justify-content:center; align-items:flex-start;">
-
-      <a href="https://sdgs.un.org/goals/goal1" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
-        <img src="sdg1.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 1">
-        <span style="font-size:8px;font-weight:700;color:#e5243b;text-align:center;line-height:1.2;">NO POVERTY</span>
-      </a>
-
-      <a href="https://sdgs.un.org/goals/goal2" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
-        <img src="sdg2.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 2">
-        <span style="font-size:8px;font-weight:700;color:#dda63a;text-align:center;line-height:1.2;">ZERO HUNGER</span>
-      </a>
-
-      <a href="https://sdgs.un.org/goals/goal8" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
-        <img src="sdg8.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 8">
-        <span style="font-size:8px;font-weight:700;color:#a21942;text-align:center;line-height:1.2;">DECENT WORK</span>
-      </a>
-
-      <a href="https://sdgs.un.org/goals/goal9" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
-        <img src="sdg9.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 9">
-        <span style="font-size:8px;font-weight:700;color:#fd6925;text-align:center;line-height:1.2;">INNOVATION</span>
-      </a>
-
-      <a href="https://sdgs.un.org/goals/goal10" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
-        <img src="sdg10.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 10">
-        <span style="font-size:8px;font-weight:700;color:#dd1367;text-align:center;line-height:1.2;">REDUCED INEQUALITIES</span>
-      </a>
-
-      <a href="https://sdgs.un.org/goals/goal12" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
-        <img src="sdg12.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 12">
-        <span style="font-size:8px;font-weight:700;color:#bf8b2e;text-align:center;line-height:1.2;">RESPONSIBLE CONSUMPTION</span>
-      </a>
-
-      <a href="https://sdgs.un.org/goals/goal13" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
-        <img src="sdg13.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 13">
-        <span style="font-size:8px;font-weight:700;color:#3f7e44;text-align:center;line-height:1.2;">CLIMATE ACTION</span>
-      </a>
-
-      <a href="https://sdgs.un.org/goals/goal15" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
-        <img src="sdg15.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 15">
-        <span style="font-size:8px;font-weight:700;color:#56c02b;text-align:center;line-height:1.2;">LIFE ON LAND</span>
-      </a>
-
-      <a href="https://sdgs.un.org/goals/goal17" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
-        <img src="sdg17.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 17">
-        <span style="font-size:8px;font-weight:700;color:#19486a;text-align:center;line-height:1.2;">PARTNERSHIPS</span>
-      </a>
-
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; margin-top:2.5rem;">
+      <!-- Cacao-Tech -->
+      <div style="background:var(--navy); border-top:4px solid var(--lime); padding:2rem; display:flex; flex-direction:column; gap:1rem;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--lime);">Working Platform · EU-funded · Completed</div>
+        <div style="font-size:22px; font-weight:800; color:#fff; letter-spacing:-0.4px;">Cacao-Tech</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.65); font-weight:600; text-transform:uppercase; letter-spacing:0.06em;">Cacao · Ecuador</div>
+        <div style="font-size:14px; color:rgba(255,255,255,0.8); line-height:1.65; flex:1;">Farmer registration, GPS mapping, batch traceability, quality capture and aggregator dashboard — a working platform used live across the cacao supply chain. Built in low-code: fully configurable to any cooperative or supply chain operator's requirements.</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <a href="projects.html" style="font-size:12px; font-weight:700; color:var(--navy-deep); background:var(--lime); padding:8px 14px; text-decoration:none;">See platform &amp; demo →</a>
+          <a href="https://www.cacaotech.eu/" target="_blank" style="font-size:12px; font-weight:700; color:var(--lime); border:1px solid rgba(197,220,79,0.4); padding:8px 14px; text-decoration:none;">cacaotech.eu →</a>
+        </div>
+      </div>
+      <!-- West Africa — moved up to signal strategic direction -->
+      <div style="background:var(--navy-deep); border-top:4px dashed rgba(197,220,79,0.4); padding:2rem; display:flex; flex-direction:column; gap:1rem;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(197,220,79,0.6);">Expanding into</div>
+        <div style="font-size:22px; font-weight:800; color:#fff; letter-spacing:-0.4px;">West Africa</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.55); font-weight:600; text-transform:uppercase; letter-spacing:0.06em;">Cocoa · Circular Value · Agrifood Technology</div>
+        <div style="font-size:14px; color:rgba(255,255,255,0.65); line-height:1.65; flex:1;">Building partnerships and local capabilities around cocoa value chains, agrifood technology and circular value creation. If you are active in West African agrifood, we want to talk.</div>
+        <a href="partner.html" style="font-size:13px; font-weight:700; color:rgba(197,220,79,0.7);">Discuss a partnership →</a>
+      </div>
+      <!-- Citrus-Tech -->
+      <div style="background:var(--navy); border-top:4px solid var(--lime); padding:2rem; display:flex; flex-direction:column; gap:1rem;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--lime);">Active</div>
+        <div style="font-size:22px; font-weight:800; color:#fff; letter-spacing:-0.4px;">Citrus-Tech</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.65); font-weight:600; text-transform:uppercase; letter-spacing:0.06em;">Citrus · Vietnam</div>
+        <div style="font-size:14px; color:rgba(255,255,255,0.8); line-height:1.65; flex:1;">Exploring circular opportunities from citrus side streams — essential oils and animal feed — supported by IoT sensors, AI analytics and farm intelligence. With RMIT University Vietnam.</div>
+        <a href="projects.html" style="font-size:13px; font-weight:700; color:var(--lime);">Full project details →</a>
+      </div>
     </div>
 
-    <!-- Right: UN SDG logo -->
-    <a href="https://sdgs.un.org/goals" target="_blank" style="flex-shrink:0;">
-      <img src="SDG_logo_UN.png" alt="UN SDG logo" style="width:64px;height:64px;object-fit:contain;">
-    </a>
-
+    <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="projects.html" class="btn btn-primary btn-arrow">All projects</a>
+      <a href="https://www.cacaotech.eu/" target="_blank" class="btn btn-outline-light">cacaotech.eu →</a>
+      <a href="https://drg4food.eu/meet-the-winners-cacao-tech/" target="_blank" class="btn btn-outline-light">DRG4Food award →</a>
+    </div>
   </div>
-</div>
+</section>
 
-
-<!-- JOURNEY -->
+<!-- HOW WE WORK — abbreviated -->
 <section>
   <div class="section-inner">
     <span class="eyebrow">How We Work</span>
-    <h2 class="section-title">One model. Any crop.<br><span class="accent">Any emerging market.</span></h2>
-    <p class="section-lead">A repeatable stack that turns isolated smallholder farmers into connected, traceable, circular producers — without requiring them to become technology experts.</p>
+    <h2 class="section-title">One model.<br><span class="accent">Any crop, any market.</span></h2>
+    <p class="section-lead">A reusable approach developed through cacao and citrus value chain projects — turning isolated smallholder farmers into connected, traceable, circular producers across emerging agricultural markets.</p>
 
     <div class="journey-grid">
       <div class="journey-cell">
         <div class="journey-num">01</div>
-        <div class="journey-title">See the Farm</div>
-        <div class="journey-body">Field robots and IoT sensors replace hours of daily manual walking. Early detection. Real data. No more guesswork.</div>
+        <div class="journey-title">Capture Farm Data</div>
+        <div class="journey-body">Mobile apps, sensors, cameras and future field robotics — the right tool for the crop and context. The farmer gets visibility; we get structured data.</div>
       </div>
       <div class="journey-cell">
         <div class="journey-num">02</div>
         <div class="journey-title">Know the Chain</div>
-        <div class="journey-body">Every harvest, spray decision, and soil reading captured in our platform — a traceable record from field to buyer.</div>
+        <div class="journey-body">Every harvest, spray decision and soil reading captured — a traceable, auditable record from field to buyer.</div>
       </div>
       <div class="journey-cell">
         <div class="journey-num">03</div>
         <div class="journey-title">Open the Market</div>
-        <div class="journey-body">Traceability data enables EUDR compliance, GLOBALG.A.P., and premium pricing isolated farmers cannot access alone.</div>
+        <div class="journey-body">Traceability data enables EUDR compliance, GLOBALG.A.P. and premium pricing that isolated farmers cannot access alone.</div>
       </div>
       <div class="journey-cell">
         <div class="journey-num">04</div>
         <div class="journey-title">Close the Loop</div>
-        <div class="journey-body">Peel, pulp, husk — what the farmer discards becomes a second income as traceable oils, fibers, and ingredients.</div>
+        <div class="journey-body">Peel, pulp, husk — what the farmer discards becomes a new opportunity through applied R&amp;D: essential oils, animal feed applications and new product development.</div>
       </div>
+    </div>
+
+    <div style="margin-top:2rem; text-align:center;">
+      <a href="how-we-work.html" class="btn btn-primary btn-arrow">See the full model</a>
     </div>
   </div>
 </section>
 
-<!-- USE-CASES -->
-<section class="dark">
-  <div class="section-inner">
-    <span class="eyebrow light">What We Solve</span>
-    <h2 class="section-title">First-mile problems<br>that block <span class="accent">real impact</span></h2>
-    <p class="section-lead">Smallholder farmers in emerging markets face the same structural gaps everywhere: no visibility, no traceability, and no second income from what they waste. We close all three.</p>
-
-    <div class="usecase-grid">
-      <div class="usecase-card">
-        <div class="usecase-tag">Compliance</div>
-        <h3 class="usecase-title">EUDR Compliance Made Easy</h3>
-        <p class="usecase-body">The EU Deforestation Regulation requires verified, traceable supply chains for cocoa, coffee, palm oil, and more. We give smallholder cooperatives the data infrastructure to comply — and to keep their European market access.</p>
-        <a href="how-we-work.html" class="usecase-link">Learn More →</a>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-tag">Sustainability</div>
-        <h3 class="usecase-title">Circular Income from Waste Streams</h3>
-        <p class="usecase-body">A single farmer's lime peel is waste. A network of 100 traceable farmers' peel is a product. We build the infrastructure that turns crop side-streams into certified ingredients — and a second income for the farmer.</p>
-        <a href="how-we-work.html" class="usecase-link">Learn More →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REACH / STATS -->
+<!-- STATS -->
 <section class="reach-section">
   <div class="section-inner">
     <span class="eyebrow light">Our Reach</span>
-    <h2 class="section-title" style="color:#fff;">Built in two years.<br>Designed to <span style="color:var(--lime);">scale globally.</span></h2>
-
+    <h2 class="section-title" style="color:#fff;">Proven across crops.<br>Scaling across <span style="color:var(--lime);">emerging markets.</span></h2>
     <div class="reach-grid">
-      <div class="reach-cell">
-        <div class="reach-num">2</div>
-        <div class="reach-label">Continents</div>
-      </div>
-      <div class="reach-cell">
-        <div class="reach-num">2</div>
-        <div class="reach-label">Live Projects</div>
-      </div>
-      <div class="reach-cell">
-        <div class="reach-num">2</div>
-        <div class="reach-label">University Partners</div>
-      </div>
-      <div class="reach-cell">
-        <div class="reach-num">5+</div>
-        <div class="reach-label">Crops on Roadmap</div>
-      </div>
-      <div class="reach-cell">
-        <div class="reach-num">3</div>
-        <div class="reach-label">Operating Locations</div>
-      </div>
-      <div class="reach-cell">
-        <div class="reach-num">∞</div>
-        <div class="reach-label">Hive Capacity</div>
-      </div>
+      <div class="reach-cell"><div class="reach-num">3</div><div class="reach-label">Continents Active</div></div>
+      <div class="reach-cell"><div class="reach-num">2</div><div class="reach-label">Live Projects</div></div>
+      <div class="reach-cell"><div class="reach-num">2</div><div class="reach-label">University Partners</div></div>
+      <div class="reach-cell"><div class="reach-num">1</div><div class="reach-label">EU Award Won</div></div>
+      <div class="reach-cell"><div class="reach-num">5+</div><div class="reach-label">Crops in Pipeline</div></div>
+      <div class="reach-cell"><div class="reach-num">∞</div><div class="reach-label">Side Streams to Unlock</div></div>
     </div>
   </div>
 </section>
 
-<!-- TECH GRID -->
-<section>
+<!-- SDG STRIP -->
+<div style="background:#f4f6f4; padding:24px 0; border-top:1px solid #e0e4e0; border-bottom:1px solid #e0e4e0;">
+  <div style="max-width:900px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:center; gap:32px; flex-wrap:wrap;">
+    <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-light);">Contributing to</div>
+    <a href="https://sdgs.un.org/goals/goal1" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
+      <img src="sdg1.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 1">
+      <span style="font-size:8px;font-weight:700;color:#e5243b;text-align:center;line-height:1.2;">NO POVERTY</span>
+    </a>
+    <a href="https://sdgs.un.org/goals/goal12" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
+      <img src="sdg12.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 12">
+      <span style="font-size:8px;font-weight:700;color:#bf8b2e;text-align:center;line-height:1.2;">RESPONSIBLE CONSUMPTION</span>
+    </a>
+    <a href="https://sdgs.un.org/goals/goal15" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:4px; width:64px;">
+      <img src="sdg15.png" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.2);" alt="SDG 15">
+      <span style="font-size:8px;font-weight:700;color:#56c02b;text-align:center;line-height:1.2;">LIFE ON LAND</span>
+    </a>
+    <a href="https://sdgs.un.org/goals" target="_blank" style="flex-shrink:0;">
+      <img src="SDG_logo_UN.png" alt="UN SDG logo" style="width:56px;height:56px;object-fit:contain;">
+    </a>
+  </div>
+</div>
+
+<!-- TEAM — capability strip -->
+<section style="background:var(--gray-bg);">
   <div class="section-inner">
-    <span class="eyebrow">Our Platform</span>
-    <h2 class="section-title">Tech That Makes<br>a <span class="accent">Difference</span></h2>
-    <p class="section-lead">We turn data into tools — which means more visibility for farmers, more compliance for buyers, and more value extracted from every part of the crop.</p>
-
-    <div class="tech-grid">
-      <div class="tech-cell">
-        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E2A4A" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
-        <h3 class="tech-title">Field Robotics &amp; IoT</h3>
-        <ul class="tech-list">
-          <li>Autonomous robots for canal-based orchards</li>
-          <li>Computer vision pest &amp; disease detection</li>
-          <li>Soil sensors: pH, NPK, moisture, EC</li>
-          <li>Built with RMIT Vietnam engineering teams</li>
-        </ul>
+    <span class="eyebrow">The Team</span>
+    <h2 class="section-title">Five capabilities.<br><span class="accent">One connected team.</span></h2>
+    <p class="section-lead">We lead with agrifood domain expertise — and back it with software, AI, hardware and circular innovation. That combination is rare.</p>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:1rem; margin-top:2.5rem;">
+      <div style="background:#fff; border-top:4px solid var(--lime); padding:1.75rem;">
+        <div style="font-size:28px; margin-bottom:1rem;">🌾</div>
+        <div style="font-size:16px; font-weight:800; color:var(--navy); margin-bottom:0.5rem;">Agrifood</div>
+        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--lime-deep); margin-bottom:0.75rem;">Strategy &amp; Domain</div>
+        <div style="font-size:13px; color:var(--ink-mid); line-height:1.6;">International agrifood experience across Europe, Africa, Latin America and Southeast Asia. From De Heus to The Fruit Republic to live emerging-market projects.</div>
       </div>
-      <div class="tech-cell">
-        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E2A4A" stroke-width="2.5"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 3v18"/></svg></div>
-        <h3 class="tech-title">Traceability Platform</h3>
-        <ul class="tech-list">
-          <li>Farm-level traceability plot to export</li>
-          <li>Power BI dashboards for all stakeholders</li>
-          <li>ERP, lab, and logistics integration</li>
-          <li>Offline-capable for low-connectivity farms</li>
-        </ul>
+      <div style="background:#fff; border-top:4px solid var(--lime); padding:1.75rem;">
+        <div style="font-size:28px; margin-bottom:1rem;">🌾</div>
+        <div style="font-size:16px; font-weight:800; color:var(--navy); margin-bottom:0.5rem;">Agrifood Expertise</div>
+        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--lime-deep); margin-bottom:0.75rem;">Domain &amp; Strategy</div>
+        <div style="font-size:13px; color:var(--ink-mid); line-height:1.6;">International agrifood strategy, supply chain and transformation experience across Europe, Asia and Africa. From Royal De Heus to The Fruit Republic to emerging-market projects.</div>
       </div>
-      <div class="tech-cell">
-        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E2A4A" stroke-width="2.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3 class="tech-title">Compliance &amp; Markets</h3>
-        <ul class="tech-list">
-          <li>EUDR deforestation compliance ready</li>
-          <li>GLOBALG.A.P. &amp; food safety supported</li>
-          <li>Sustainability reporting for EU buyers</li>
-          <li>Cooperative aggregation for collective impact</li>
-        </ul>
+      <div style="background:#fff; border-top:4px solid var(--lime); padding:1.75rem;">
+        <div style="font-size:28px; margin-bottom:1rem;">💻</div>
+        <div style="font-size:16px; font-weight:800; color:var(--navy); margin-bottom:0.5rem;">Software</div>
+        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--lime-deep); margin-bottom:0.75rem;">Platform &amp; Engineering</div>
+        <div style="font-size:13px; color:var(--ink-mid); line-height:1.6;">Dedicated engineering team in Vietnam. Traceability platforms, farm dashboards, cloud architecture, data integration and mobile applications.</div>
       </div>
-      <div class="tech-cell">
-        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E2A4A" stroke-width="2.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg></div>
-        <h3 class="tech-title">Circular Valorization</h3>
-        <ul class="tech-list">
-          <li>Cold-pressed lime oil &amp; D-Limonene pathways</li>
-          <li>Cacao pulp &amp; husk for food ingredients</li>
-          <li>Traceability makes waste streams premium</li>
-          <li>Direct lines to European ingredient buyers</li>
-        </ul>
+      <div style="background:#fff; border-top:4px solid var(--lime); padding:1.75rem;">
+        <div style="font-size:28px; margin-bottom:1rem;">🤖</div>
+        <div style="font-size:16px; font-weight:800; color:var(--navy); margin-bottom:0.5rem;">Hardware</div>
+        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--lime-deep); margin-bottom:0.75rem;">Field Technology &amp; IoT</div>
+        <div style="font-size:13px; color:var(--ink-mid); line-height:1.6;">IoT sensors, edge devices and on-farm deployment, with field robotics in development. Built with RMIT University Vietnam engineering teams.</div>
       </div>
+      <div style="background:#fff; border-top:4px solid var(--lime); padding:1.75rem;">
+        <div style="font-size:28px; margin-bottom:1rem;">🧠</div>
+        <div style="font-size:16px; font-weight:800; color:var(--navy); margin-bottom:0.5rem;">AI</div>
+        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--lime-deep); margin-bottom:0.75rem;">Data Science &amp; Vision</div>
+        <div style="font-size:13px; color:var(--ink-mid); line-height:1.6;">Computer vision, predictive analytics, YOLO-based pest and disease detection, yield forecasting and AI-enabled supply chain intelligence.</div>
+      </div>
+    </div>
+    <div style="margin-top:1.5rem; text-align:center;">
+      <a href="about.html" class="btn btn-primary btn-arrow">Meet the team</a>
     </div>
   </div>
 </section>
 
-<!-- CASE STUDIES -->
-<section style="background: var(--gray-bg);">
+<!-- WHY HYVES — credibility strip -->
+<section style="background:#fff;">
   <div class="section-inner">
-    <span class="eyebrow">Our Projects</span>
-    <h2 class="section-title">Real farms. Real data.<br><span class="accent">Real impact.</span></h2>
-    <p class="section-lead">A continuous loop of innovation with farmers at the center of food's first mile.</p>
-
-    <div class="cases-grid">
-      <div class="case-card">
-        <div class="case-image cacao">🍫</div>
-        <div class="case-body">
-          <div class="case-eyebrow">Cacao · Ecuador</div>
-          <h3 class="case-title">Cacao-Tech: Digitalising the Cacao Process</h3>
-          <p class="case-desc">A circular, data-driven model using NIR technology to assess cacao quality and trace every harvest back to the farmer — enabling EUDR compliance and turning pulp and husks into a second income stream. Piloted across three cacao regions in Ecuador.</p>
-          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
-            <a href="https://www.cacaotech.eu/" target="_blank" class="case-link">cacaotech.eu →</a>
-            <a href="https://drg4food.eu/meet-the-winners-cacao-tech/" target="_blank" class="case-link">drg4food.eu →</a>
-          </div>
+    <span class="eyebrow">Why Hyves.Tech</span>
+    <h2 class="section-title">Real projects.<br>Real partners.<br><span class="accent">Real outcomes.</span></h2>
+    <p class="section-lead">Our credibility comes from what we've built and who we've built it with — not where our office is.</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border-dark); border:1px solid var(--border-dark); margin-top:2.5rem;">
+      <div style="background:#fff; padding:2rem 2.5rem; display:flex; gap:1.25rem; align-items:flex-start;">
+        <div style="width:6px; height:6px; border-radius:50%; background:var(--lime-deep); flex-shrink:0; margin-top:8px;"></div>
+        <div>
+          <div style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:4px;">Agrifood domain expertise — not just technology</div>
+          <div style="font-size:13px; color:var(--ink-mid); line-height:1.6;">Senior agrifood strategy, operations and supply chain experience across Royal De Heus, The Fruit Republic and live emerging-market projects. We understand the farm, the chain and the buyer — and build technology that reflects that.</div>
         </div>
       </div>
-      <div class="case-card">
-        <div class="case-image lime">🍋</div>
-        <div class="case-body">
-          <div class="case-eyebrow">Lime · Vietnam</div>
-          <h3 class="case-title">Citrus-Tech: Smart Field Robot for Long An</h3>
-          <p class="case-desc">Autonomous field robot, soil sensors, and a farm dashboard for lime orchards in Bến Lức. Built in partnership with RMIT University Vietnam.</p>
-          <a href="projects.html" class="case-link">Read more</a>
+      <div style="background:#fff; padding:2rem 2.5rem; display:flex; gap:1.25rem; align-items:flex-start;">
+        <div style="width:6px; height:6px; border-radius:50%; background:var(--lime-deep); flex-shrink:0; margin-top:8px;"></div>
+        <div>
+          <div style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:4px;">Proven projects — not just proposals</div>
+          <div style="font-size:13px; color:var(--ink-mid); line-height:1.6;">Cacao-Tech: EU-funded innovation project completed, with Hyves contributing the digital traceability platform. Citrus-Tech: active in Vietnam. Both delivering real traceability, real farm intelligence and real circular outputs.</div>
         </div>
       </div>
-      <div class="case-card">
-        <div class="case-image">🌍</div>
-        <div class="case-body">
-          <div class="case-eyebrow">Next crop · Your market</div>
-          <h3 class="case-title">Coffee, Mango, Coconut on the roadmap</h3>
-          <p class="case-desc">The model is proven. The platform is ready. We're looking for the next cooperative, crop, and country to join the hive.</p>
-          <a href="partner.html" class="case-link">Talk to us</a>
+      <div style="background:#fff; padding:2rem 2.5rem; display:flex; gap:1.25rem; align-items:flex-start;">
+        <div style="width:6px; height:6px; border-radius:50%; background:var(--lime-deep); flex-shrink:0; margin-top:8px;"></div>
+        <div>
+          <div style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:4px;">Real partners — on the ground and in the lab</div>
+          <div style="font-size:13px; color:var(--ink-mid); line-height:1.6;">RMIT University Vietnam, Wageningen University &amp; Research, CZU, Pacha, San José — and future collaborations in Africa with partners who know the soil and the supply chain.</div>
+        </div>
+      </div>
+      <div style="background:#fff; padding:2rem 2.5rem; display:flex; gap:1.25rem; align-items:flex-start;">
+        <div style="width:6px; height:6px; border-radius:50%; background:var(--lime-deep); flex-shrink:0; margin-top:8px;"></div>
+        <div>
+          <div style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:4px;">One model that travels — across crops, countries and climates</div>
+          <div style="font-size:13px; color:var(--ink-mid); line-height:1.6;">Developed through cacao and citrus projects. Designed for cocoa and other crops across West Africa and Southeast Asia. The data infrastructure is the same; the crop and context adapt.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ALLIANCES -->
-<section>
-  <div class="section-inner" style="text-align:center;">
-    <span class="eyebrow">Alliances &amp; Partners</span>
-    <h2 class="section-title">Embedded in the<br><span class="accent">global agri-food ecosystem</span></h2>
-    <p class="section-lead" style="margin-left:auto;margin-right:auto;">From the world's leading agricultural university to engineering partners on the ground in Vietnam — we're connected to the people, knowledge, and networks that make smallholder transformation real.</p>
-
-    <div class="alliances-row">
-      <div class="alliance-item">Wageningen University &amp; Research</div>
-      <div class="alliance-item">RMIT University Vietnam</div>
+<!-- HOW TO ENGAGE -->
+<section style="background:var(--gray-bg);">
+  <div class="section-inner">
+    <span class="eyebrow">How to Engage</span>
+    <h2 class="section-title">Not sure where to start?<br><span class="accent">Here are three clear paths.</span></h2>
+    <div class="engage-grid">
+      <div class="engage-card">
+        <div class="engage-label">For exporters &amp; cooperatives</div>
+        <div class="engage-title">Free Traceability Assessment</div>
+        <div class="engage-desc">We review your current traceability setup and show you exactly what data you need for EUDR and buyer audits — and what you're missing.</div>
+        <a href="partner.html" class="engage-link">Book now →</a>
+      </div>
+      <div class="engage-card">
+        <div class="engage-label">For food companies &amp; buyers</div>
+        <div class="engage-title">EUDR Readiness Scan</div>
+        <div class="engage-desc">A structured review of your supply chain's deforestation compliance position — with a clear action plan to close the gaps.</div>
+        <a href="partner.html" class="engage-link">Get started →</a>
+      </div>
+      <div class="engage-card">
+        <div class="engage-label">For innovation partners &amp; funders</div>
+        <div class="engage-title">Discovery Workshop</div>
+        <div class="engage-desc">Half-day session to map your circular value chain opportunities and identify where data infrastructure creates the most leverage.</div>
+        <a href="partner.html" class="engage-link">Request a session →</a>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- CTA BANNER -->
 <section class="cta-banner">
   <div class="cta-inner">
     <div class="cta-text">
-      <h2>Ready to bring the hive<br>to your crop?</h2>
+      <h2>Ready to unlock value<br>from your supply chain?</h2>
     </div>
-    <a href="partner.html" class="btn btn-outline-dark btn-arrow">Join the Hive</a>
+    <a href="partner.html" class="btn btn-outline-dark btn-arrow">Book a Discovery Call</a>
   </div>
 </section>
 
@@ -355,59 +416,29 @@
           <li><a href="about.html">About</a></li>
           <li><a href="how-we-work.html">How We Work</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="partner.html">Partner With Us</a></li>
+          <li><a href="partner.html">Work With Us</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Locations</h4>
         <ul>
-          <li style="display:flex; align-items:center; gap:10px;">
-            <!-- NL flag -->
-            <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,0.3);" xmlns="http://www.w3.org/2000/svg">
-              <clipPath id="circle-nl"><circle cx="12" cy="12" r="12"/></clipPath>
-              <g clip-path="url(#circle-nl)">
-                <rect width="24" height="8" fill="#AE1C28"/>
-                <rect y="8" width="24" height="8" fill="#FFFFFF"/>
-                <rect y="16" width="24" height="8" fill="#21468B"/>
-              </g>
-            </svg>
-            Ede-Wageningen, NL
-          </li>
-          <li style="display:flex; align-items:center; gap:10px;">
-            <!-- VN flag -->
-            <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,0.3);" xmlns="http://www.w3.org/2000/svg">
-              <clipPath id="circle-vn"><circle cx="12" cy="12" r="12"/></clipPath>
-              <g clip-path="url(#circle-vn)">
-                <rect width="24" height="24" fill="#DA251D"/>
-                <polygon points="12,5 13.8,10.5 19.5,10.5 14.9,13.8 16.6,19.3 12,16 7.4,19.3 9.1,13.8 4.5,10.5 10.2,10.5" fill="#FFFF00"/>
-              </g>
-            </svg>
-            Ho Chi Minh City, VN
-          </li>
-          <li style="display:flex; align-items:center; gap:10px;">
-            <!-- CI flag (Ivory Coast) -->
-            <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,0.3);" xmlns="http://www.w3.org/2000/svg">
-              <clipPath id="circle-ci"><circle cx="12" cy="12" r="12"/></clipPath>
-              <g clip-path="url(#circle-ci)">
-                <rect width="8" height="24" fill="#F77F00"/>
-                <rect x="8" width="8" height="24" fill="#FFFFFF"/>
-                <rect x="16" width="8" height="24" fill="#009A44"/>
-              </g>
-            </svg>
-            Abidjan, CI
-          </li>
+          <li>Ede-Wageningen, NL</li>
+          <li>Ho Chi Minh City, VN</li>
+          
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:info@hyves.tech">info@hyves.tech</a></li>
-          <li><a href="partner.html">Join the Hive</a></li>
+          <li><a href="partner.html">Book a Discovery Call</a></li>
+          <li><a href="partner.html">Request a Demo</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Hyves.Tech. All rights reserved.</span>
+      <span>Ede-Wageningen, Netherlands</span>
     </div>
   </div>
 </footer>

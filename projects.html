@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Hyves.Tech</title>
-  <meta name="description" content="Cacao-Tech in Ecuador. Citrus-Tech in Vietnam. Real farms, real data, real impact. See the projects that prove the hive model works.">
+  <meta name="description" content="Cacao-Tech in Ecuador — EU-funded project, partner in the DRG4Food Open Call, completed. Citrus-Tech in Vietnam. Real farms, real data, real impact.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="logo.jpg">
   <style>
@@ -15,108 +15,62 @@
     .page-hero h1 .accent { color: var(--lime); }
     .page-hero p { font-size: 19px; line-height: 1.65; color: rgba(255,255,255,0.85); max-width: 640px; }
 
+    /* Award badge */
+    .award-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--lime); color: var(--navy-deep);
+      font-size: 13px; font-weight: 700; padding: 10px 20px;
+      margin-top: 2rem;
+    }
+
     /* Project block */
     .project-block { padding: 5rem 2rem; border-bottom: 1px solid var(--border-dark); }
     .project-block:nth-child(even) { background: var(--gray-bg); }
-    .project-inner {
-      max-width: 1280px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center;
-    }
+    .project-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .project-block.reverse .project-inner > div:first-child { order: 2; }
 
-    .project-image {
-      height: 420px;
-      background-size: cover; background-position: center;
-      position: relative; overflow: hidden;
-      display: flex; align-items: flex-end; padding: 2rem;
-    }
-    .project-image::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(14,42,74,0.1) 0%, rgba(14,42,74,0.7) 100%);
-    }
-    .project-image-cacao {
-      background: linear-gradient(135deg, #4A2511 0%, #6B3818 50%, #8B5A2B 100%);
-    }
-    .project-image-cacao::before {
-      content: '🍫'; position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%); font-size: 140px;
-      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
-    }
-    .project-image-lime {
-      background: linear-gradient(135deg, #2D5016 0%, #4A7C2A 50%, #87B26A 100%);
-    }
-    .project-image-lime::before {
-      content: '🍋'; position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%); font-size: 140px;
-      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
-    }
-    .project-image-tag {
-      position: relative; z-index: 2;
-      background: var(--lime); color: var(--navy-deep);
-      font-size: 12px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.08em;
-      padding: 8px 14px;
-    }
+    .project-image { height: 420px; background-size: cover; background-position: center; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 2rem; }
+    .project-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,42,74,0.1) 0%, rgba(14,42,74,0.7) 100%); }
+    .project-image-cacao { background: linear-gradient(135deg, #4A2511 0%, #6B3818 50%, #8B5A2B 100%); }
+    .project-image-cacao::before { content: '🍫'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 140px; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4)); }
+    .project-image-lime { background: linear-gradient(135deg, #2D5016 0%, #4A7C2A 50%, #87B26A 100%); }
+    .project-image-lime::before { content: '🍋'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 140px; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4)); }
+    .project-image-tag { position: relative; z-index: 2; background: var(--lime); color: var(--navy-deep); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 8px 14px; }
 
-    .project-eyebrow {
-      font-size: 12px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.12em; color: var(--lime-deep); margin-bottom: 1rem;
-    }
-    .project-title {
-      font-size: clamp(32px, 4vw, 44px); font-weight: 800;
-      line-height: 1.1; letter-spacing: -1px;
-      margin-bottom: 1rem; color: var(--navy);
-    }
-    .project-subtitle {
-      font-size: 18px; color: var(--ink-mid);
-      margin-bottom: 1.5rem; font-weight: 500;
-    }
-    .project-desc {
-      font-size: 16px; line-height: 1.7;
-      color: var(--ink-mid); margin-bottom: 2rem;
-    }
-    .project-stats {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1rem; margin-bottom: 2rem;
-      padding: 1.5rem; border: 1px solid var(--border-dark);
-      background: #fff;
-    }
+    .project-eyebrow { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--lime-deep); margin-bottom: 1rem; }
+    .project-title { font-size: clamp(32px, 4vw, 44px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 1rem; color: var(--navy); }
+    .project-subtitle { font-size: 18px; color: var(--ink-mid); margin-bottom: 1.5rem; font-weight: 500; }
+    .project-desc { font-size: 16px; line-height: 1.7; color: var(--ink-mid); margin-bottom: 2rem; }
+
+    /* Structured project info */
+    .project-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    .meta-item { padding: 1rem; background: #fff; border-left: 3px solid var(--lime); }
+    .project-block:nth-child(even) .meta-item { background: #fff; }
+    .meta-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-light); margin-bottom: 4px; }
+    .meta-value { font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+
+    .project-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; padding: 1.5rem; border: 1px solid var(--border-dark); background: #fff; }
     .project-block:nth-child(even) .project-stats { background: var(--gray-bg); border: none; padding-left: 0; padding-right: 0; }
-    .project-stat-num {
-      font-size: 28px; font-weight: 800;
-      color: var(--lime-deep); line-height: 1;
-      letter-spacing: -1px; margin-bottom: 4px;
-    }
-    .project-stat-label {
-      font-size: 11px; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.08em;
-      color: var(--ink-light);
-    }
-    .project-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-    .project-tag {
-      font-size: 11px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.08em; padding: 6px 14px;
-      background: var(--navy); color: #fff;
-    }
+    .project-stat-num { font-size: 28px; font-weight: 800; color: var(--lime-deep); line-height: 1; letter-spacing: -1px; margin-bottom: 4px; }
+    .project-stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-light); }
+
+    .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .project-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 6px 14px; background: var(--navy); color: #fff; }
     .project-block:nth-child(even) .project-tag { background: #fff; color: var(--navy); border: 1px solid var(--navy); }
+
+    .project-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .project-link { font-size: 13px; font-weight: 700; color: var(--lime-deep); border-bottom: 2px solid var(--lime); padding-bottom: 2px; }
 
     @media (max-width: 900px) {
       .project-inner { grid-template-columns: 1fr; gap: 2rem; }
       .project-block.reverse .project-inner > div:first-child { order: 0; }
       .project-image { height: 280px; }
-    }
-    @media (max-width: 500px) {
-      .project-stats { grid-template-columns: 1fr; }
+      .project-meta { grid-template-columns: 1fr; }
     }
 
-    /* Future projects */
     .future-section { background: var(--navy); color: #fff; padding: 5rem 2rem; }
     .future-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-    .future-card {
-      background: var(--navy-deep); padding: 2rem;
-      border-top: 4px solid var(--lime);
-    }
+    .future-card { background: var(--navy-deep); padding: 2rem; border-top: 4px solid var(--lime); }
     .future-icon { font-size: 40px; margin-bottom: 1rem; }
     .future-name { font-size: 20px; font-weight: 800; margin-bottom: 0.5rem; }
     .future-geo { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--lime); margin-bottom: 1rem; }
@@ -128,7 +82,7 @@
 
 <!-- TOP BAR -->
 <div class="topbar">
-  Based in Wageningen Food Valley · Working with WUR &amp; RMIT Vietnam · <a href="partner.html">Join the hive →</a>
+  From Farm to Value · Agrifood Technology for Emerging Agricultural Markets · <a href="partner.html">Work With Us →</a>
 </div>
 
 <!-- NAV -->
@@ -142,9 +96,9 @@
       <li><a href="how-we-work.html">How We Work</a></li>
       <li><a href="projects.html" class="active">Projects</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="partner.html">Partner</a></li>
+      <li><a href="partner.html">Work With Us</a></li>
     </ul>
-    <a href="partner.html" class="nav-cta">Join the Hive</a>
+    <a href="partner.html" class="nav-cta">Book a Call</a>
   </div>
 </nav>
 
@@ -153,41 +107,111 @@
   <div class="page-hero-inner">
     <div class="hero-eyebrow">Our Projects</div>
     <h1>Real farms.<br>Real data.<br><span class="accent">Real impact.</span></h1>
-    <p>Two live projects across two crops and two continents. The model is proven — and it's growing.</p>
+    <p>Two live projects across two crops and two continents. One completed EU-funded innovation project. The model is proven — and it's growing.</p>
   </div>
 </section>
 
-<!-- PROJECT 1: CACAO-TECH -->
+<!-- PROJECT 1: CACAO-TECH — working platform showcase -->
 <section class="project-block">
   <div class="project-inner">
     <div>
-      <div class="project-eyebrow">Cacao · Ecuador · Live</div>
+      <div class="project-eyebrow">Cacao · Ecuador · EU-funded · Completed</div>
       <h2 class="project-title">Cacao-Tech</h2>
-      <div class="project-subtitle">Digitalising the cacao value chain in Ecuador</div>
-      <p class="project-desc">Farmer registration, plot mapping, NIR quality capture and EUDR traceability deployed across the cacao supply chain. We're building the data infrastructure that turns isolated cacao farmers into a connected, certified, market-accessing collective.</p>
-      <div class="project-stats">
-        <div>
-          <div class="project-stat-num">EUDR</div>
-          <div class="project-stat-label">Compliance Ready</div>
+      <div class="project-subtitle">Working digital traceability platform for the cacao value chain</div>
+      <p class="project-desc">Hyves contributed to the development of a digital traceability platform connecting farmers, cooperatives and buyers. The platform supports farmer registration, farm mapping, batch tracking, quality data capture and supply chain transparency — used in live operations across the cacao supply chain in Ecuador.</p>
+
+      <!-- What we delivered -->
+      <div style="margin-bottom:2rem;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink-light); margin-bottom:0.75rem;">What we delivered</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+          <div style="font-size:13px; color:var(--ink-mid); padding:8px 0 8px 16px; position:relative; border-top:1px solid var(--border-dark);">
+            <span style="position:absolute; left:0; top:50%; transform:translateY(-50%); width:6px; height:6px; background:var(--lime-deep); border-radius:50%;"></span>Farmer registration
+          </div>
+          <div style="font-size:13px; color:var(--ink-mid); padding:8px 0 8px 16px; position:relative; border-top:1px solid var(--border-dark);">
+            <span style="position:absolute; left:0; top:50%; transform:translateY(-50%); width:6px; height:6px; background:var(--lime-deep); border-radius:50%;"></span>GPS plot mapping
+          </div>
+          <div style="font-size:13px; color:var(--ink-mid); padding:8px 0 8px 16px; position:relative; border-top:1px solid var(--border-dark);">
+            <span style="position:absolute; left:0; top:50%; transform:translateY(-50%); width:6px; height:6px; background:var(--lime-deep); border-radius:50%;"></span>Batch traceability
+          </div>
+          <div style="font-size:13px; color:var(--ink-mid); padding:8px 0 8px 16px; position:relative; border-top:1px solid var(--border-dark);">
+            <span style="position:absolute; left:0; top:50%; transform:translateY(-50%); width:6px; height:6px; background:var(--lime-deep); border-radius:50%;"></span>Quality data capture (NIR)
+          </div>
+          <div style="font-size:13px; color:var(--ink-mid); padding:8px 0 8px 16px; position:relative; border-top:1px solid var(--border-dark);">
+            <span style="position:absolute; left:0; top:50%; transform:translateY(-50%); width:6px; height:6px; background:var(--lime-deep); border-radius:50%;"></span>Farmer communication module
+          </div>
+          <div style="font-size:13px; color:var(--ink-mid); padding:8px 0 8px 16px; position:relative; border-top:1px solid var(--border-dark);">
+            <span style="position:absolute; left:0; top:50%; transform:translateY(-50%); width:6px; height:6px; background:var(--lime-deep); border-radius:50%;"></span>Supply chain transparency
+          </div>
         </div>
-        <div>
-          <div class="project-stat-num">NIR</div>
-          <div class="project-stat-label">Quality Capture</div>
-        </div>
-        <div>
-          <div class="project-stat-num">100%</div>
-          <div class="project-stat-label">Plot Traceability</div>
+        <div style="margin-top:1rem; padding:1rem; background:var(--gray-bg); border-left:3px solid var(--lime); font-size:13px; color:var(--ink-mid); line-height:1.6;">
+          <strong style="color:var(--navy);">Built in low-code.</strong> The platform is fully configurable — every deployment is adjusted to the specific requirements of the cooperative, aggregator or supply chain operator. No fixed dashboards, no rigid product.
         </div>
       </div>
+
+      <div class="project-meta">
+        <div class="meta-item">
+          <div class="meta-label">Funding</div>
+          <div class="meta-value">EU-funded · DRG4Food Open Call</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Status</div>
+          <div class="meta-value">Completed · Platform live</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Consortium</div>
+          <div class="meta-value">CZU · Wageningen · Pacha · San José</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Hyves role</div>
+          <div class="meta-value">Digital traceability platform development</div>
+        </div>
+      </div>
+
       <div class="project-tags">
-        <span class="project-tag">Traceability</span>
-        <span class="project-tag">EUDR</span>
-        <span class="project-tag">Quality</span>
-        <span class="project-tag">Pulp Valorization</span>
+        <span class="project-tag">Traceability Platform</span>
+        <span class="project-tag">Farmer Registration</span>
+        <span class="project-tag">Batch Management</span>
+        <span class="project-tag">Dashboards</span>
+        <span class="project-tag">EU-funded</span>
+      </div>
+
+      <div class="project-links" style="margin-top:1.5rem; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://www.cacaotech.eu/" target="_blank" class="btn btn-primary" style="font-size:12px; padding:12px 20px;">Visit Project Website →</a>
+        <a href="https://www.cacaotech.eu/" target="_blank" class="btn btn-outline-dark" style="font-size:12px; padding:12px 20px;">Watch Demo →</a>
       </div>
     </div>
-    <div class="project-image project-image-cacao">
-      <span class="project-image-tag">Guayaquil, Ecuador</span>
+
+    <!-- Right column: screenshot + video -->
+    <div>
+      <!-- Platform screenshot -->
+      <div style="background:var(--navy-deep); padding:1.25rem; margin-bottom:1.5rem;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--lime); margin-bottom:0.75rem;">Working Platform</div>
+        <img src="1781440524924_image.png" alt="Cacao-Tech platform — aggregator module" style="width:100%; display:block; border:1px solid rgba(255,255,255,0.08);">
+        <div style="font-size:11px; color:rgba(255,255,255,0.5); margin-top:10px; font-style:italic;">Working aggregator dashboard used for farmer, farm and batch management — fully configurable per deployment.</div>
+      </div>
+
+      <!-- Video title frame -->
+      <div style="background:#000; margin-bottom:1.5rem; position:relative;">
+        <img src="1781440758248_image.png" alt="Cacao-Tech Tracking & Tracing Software Solution" style="width:100%; display:block; opacity:0.85;">
+      </div>
+
+      <!-- Embedded video -->
+      <div style="background:var(--navy-deep); padding:1.5rem; margin-bottom:1.5rem;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--lime); margin-bottom:0.75rem;">Platform Demonstration</div>
+        <video controls poster="1781440758248_image.png" style="width:100%; display:block; background:#000;">
+          <source src="CacaoTech_T_T.mov" type="video/mp4">
+          <source src="CacaoTech_T_T.mov" type="video/quicktime">
+          Your browser does not support video playback.
+        </video>
+        <div style="font-size:12px; color:rgba(255,255,255,0.5); margin-top:10px; font-style:italic;">Cacao-Tech · Tracking &amp; Tracing Software Solution</div>
+      </div>
+
+      <!-- Low-code flexibility note -->
+      <div style="background:var(--lime); padding:1.5rem;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--navy-deep); margin-bottom:0.5rem;">Built in low-code</div>
+        <div style="font-size:14px; font-weight:700; color:var(--navy-deep); margin-bottom:0.5rem;">Fully configurable to your requirements</div>
+        <div style="font-size:13px; color:var(--navy-deep); line-height:1.6;">The platform is built in low-code and can be completely adjusted to the specific requirements of any cooperative, aggregator or supply chain operator. No fixed dashboards — every deployment is tailored.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -196,33 +220,55 @@
 <section class="project-block reverse">
   <div class="project-inner">
     <div>
-      <div class="project-eyebrow">Lime · Vietnam · Live</div>
+      <div class="project-eyebrow">Lime · Vietnam · Active</div>
       <h2 class="project-title">Citrus-Tech</h2>
-      <div class="project-subtitle">Smart field robot for lime farming in Long An</div>
-      <p class="project-desc">An autonomous field robot, IoT soil sensors, and a farm dashboard built specifically for canal-based lime orchards in Bến Lức. Computer vision detects pests and disease in real time, while the platform turns peel waste into traceable cold-pressed oil. Built in partnership with RMIT University Vietnam capstone teams.</p>
-      <div class="project-stats">
-        <div>
-          <div class="project-stat-num">5–6h</div>
-          <div class="project-stat-label">Daily Hours Saved</div>
+      <div class="project-subtitle">Circular value creation and farm intelligence for citrus value chains in Vietnam</div>
+      <p class="project-desc">Exploring circular opportunities from citrus side streams — with essential oils and animal feed applications as the most promising near-term outputs — supported by farm intelligence technologies including IoT sensors, AI analytics and farm dashboards. Future field robotics in development with RMIT University Vietnam.</p>
+
+      <div class="project-meta">
+        <div class="meta-item">
+          <div class="meta-label">Focus</div>
+          <div class="meta-value">Circular value · Farm intelligence · R&amp;D</div>
         </div>
-        <div>
-          <div class="project-stat-num">15 fps</div>
-          <div class="project-stat-label">YOLO Detection</div>
+        <div class="meta-item">
+          <div class="meta-label">Partnership</div>
+          <div class="meta-value">RMIT University Vietnam</div>
         </div>
-        <div>
-          <div class="project-stat-num">7-in-1</div>
-          <div class="project-stat-label">Soil Sensor Suite</div>
+        <div class="meta-item">
+          <div class="meta-label">Geography</div>
+          <div class="meta-value">Bến Lức · Long An · Vietnam</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Circular opportunities</div>
+          <div class="meta-value">Essential oils · Animal feed applications</div>
         </div>
       </div>
+
+      <div class="project-stats">
+        <div>
+          <div class="project-stat-num">R&amp;D</div>
+          <div class="project-stat-label">Essential oils &amp; feed</div>
+        </div>
+        <div>
+          <div class="project-stat-num">IoT</div>
+          <div class="project-stat-label">Soil sensors &amp; monitoring</div>
+        </div>
+        <div>
+          <div class="project-stat-num">AI</div>
+          <div class="project-stat-label">Farm analytics</div>
+        </div>
+      </div>
+
       <div class="project-tags">
-        <span class="project-tag">Field Robotics</span>
-        <span class="project-tag">Computer Vision</span>
-        <span class="project-tag">IoT</span>
-        <span class="project-tag">Peel-to-Oil</span>
+        <span class="project-tag">Circular Value</span>
+        <span class="project-tag">Essential Oils</span>
+        <span class="project-tag">Animal Feed</span>
+        <span class="project-tag">IoT Sensors</span>
+        <span class="project-tag">Farm Intelligence</span>
       </div>
     </div>
     <div class="project-image project-image-lime">
-      <span class="project-image-tag">Bến Lức, Long An</span>
+      <span class="project-image-tag">Bến Lức · Long An</span>
     </div>
   </div>
 </section>
@@ -232,26 +278,26 @@
   <div class="section-inner">
     <span class="eyebrow light">What's Next</span>
     <h2 class="section-title" style="color:#fff;">The model scales.<br><span style="color:var(--lime);">Where do we go next?</span></h2>
-    <p class="section-lead" style="color:rgba(255,255,255,0.8);">Coffee, mango, coconut — the next crops on the roadmap. Looking for cooperatives, buyers, and partners in the right markets.</p>
+    <p class="section-lead" style="color:rgba(255,255,255,0.8);">Two crops proven. Africa, Southeast Asia and East Africa next. We're looking for cooperatives, buyers and partners in the right markets to bring the next crop into the hive.</p>
 
     <div class="future-grid">
       <div class="future-card">
-        <div class="future-icon">☕</div>
-        <div class="future-geo">Ethiopia · Vietnam</div>
-        <div class="future-name">Coffee</div>
-        <div class="future-body">Cherry pulp valorization (cascara, coffee flour) for one of the world's largest smallholder crops. Ethiopia and Vietnam both have massive smallholder bases ready for traceability infrastructure.</div>
+        <div class="future-icon">🌍</div>
+        <div class="future-geo">West Africa</div>
+        <div class="future-name">Cocoa &amp; Circular Ingredients</div>
+        <div class="future-body">Focus: cocoa traceability, side-stream valorisation and agrifood technology. Building partnerships and local capabilities in West Africa around cocoa traceability, side-stream valorisation and agrifood technology.</div>
       </div>
       <div class="future-card">
-        <div class="future-icon">🥭</div>
-        <div class="future-geo">West Africa · SE Asia</div>
-        <div class="future-name">Mango</div>
-        <div class="future-body">Peel and seed kernel produce significant oil and fiber value. High EU import volumes and growing pressure for traceable, sustainable mango supply chains.</div>
+        <div class="future-icon">🔗</div>
+        <div class="future-geo">West Africa · Southeast Asia</div>
+        <div class="future-name">Traceability &amp; Circular</div>
+        <div class="future-body">Applying the model to new crops and new markets — wherever farmers need data infrastructure, supply chain transparency and circular value from side streams.</div>
       </div>
       <div class="future-card">
-        <div class="future-icon">🥥</div>
-        <div class="future-geo">Indonesia · Philippines</div>
-        <div class="future-name">Coconut</div>
-        <div class="future-body">Multiple valorization streams — shell, husk, water — and an enormous smallholder base across Southeast Asia. The coconut chain is structurally similar to the cacao chain we already serve.</div>
+        <div class="future-icon">🌱</div>
+        <div class="future-geo">Emerging Agricultural Markets</div>
+        <div class="future-name">Next Crops</div>
+        <div class="future-body">The platform is crop-agnostic. If you have a crop, a cooperative, and a side stream with value — talk to us. That's how Cacao-Tech started, and how Citrus-Tech started.</div>
       </div>
     </div>
   </div>
@@ -263,7 +309,7 @@
     <div class="cta-text">
       <h2>Got a crop to add<br>to the hive?</h2>
     </div>
-    <a href="partner.html" class="btn btn-outline-dark btn-arrow">Join the Hive</a>
+    <a href="partner.html" class="btn btn-outline-dark btn-arrow">Book a Discovery Call</a>
   </div>
 </section>
 
@@ -282,22 +328,22 @@
           <li><a href="about.html">About</a></li>
           <li><a href="how-we-work.html">How We Work</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="partner.html">Partner With Us</a></li>
+          <li><a href="partner.html">Work With Us</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Locations</h4>
         <ul>
-          <li>Ede-Wageningen</li>
-          <li>Ho Chi Minh City</li>
-          <li>Guayaquil</li>
+          <li>Ede-Wageningen, NL</li>
+          <li>Ho Chi Minh City, VN</li>
+          
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:info@hyves.tech">info@hyves.tech</a></li>
-          <li><a href="partner.html">Join the Hive</a></li>
+          <li><a href="partner.html">Book a Discovery Call</a></li>
         </ul>
       </div>
     </div>

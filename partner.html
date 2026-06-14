@@ -3,178 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join the Hive — Hyves.Tech</title>
-  <meta name="description" content="Partner with Hyves.Tech — whether you're a farmer cooperative, ingredient buyer, or impact investor. We work together to build the hive.">
+  <title>Work With Us — Hyves.Tech</title>
+  <meta name="description" content="Work with Hyves.Tech — whether you're a farmer cooperative, agribusiness, technology partner, university or investor. Tell us what you're working on.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="logo.jpg">
   <style>
     .page-hero { background: var(--navy); color: #fff; padding: 5rem 2rem 6rem; position: relative; overflow: hidden; }
     .page-hero::before { content: ''; position: absolute; right: -100px; top: 0; width: 500px; height: 500px; background: radial-gradient(circle, rgba(197,220,79,0.1) 0%, transparent 70%); }
     .page-hero-inner { max-width: 1280px; margin: 0 auto; position: relative; }
-    .page-hero h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 1.5rem; max-width: 900px; }
+    .page-hero h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 1.5rem; }
     .page-hero h1 .accent { color: var(--lime); }
     .page-hero p { font-size: 19px; line-height: 1.65; color: rgba(255,255,255,0.85); max-width: 640px; }
 
-    /* Audiences */
-    .audiences-section { padding: 5rem 2rem; }
-    .tabs {
-      display: flex; gap: 0; margin-bottom: 3rem;
-      border-bottom: 2px solid var(--border-dark);
-    }
-    .tab {
-      flex: 1; font-family: 'Inter', sans-serif;
-      font-size: 14px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.06em;
-      padding: 18px 24px; cursor: pointer;
-      border: none; background: transparent;
-      color: var(--ink-light);
-      border-bottom: 4px solid transparent;
-      margin-bottom: -2px;
-      transition: all 0.15s;
-    }
-    .tab:hover { color: var(--navy); }
-    .tab.active {
-      color: var(--navy);
-      border-bottom-color: var(--lime);
-    }
-    @media (max-width: 700px) {
-      .tabs { flex-direction: column; gap: 1px; background: var(--border-dark); border-bottom: none; }
-      .tab { background: #fff; border-bottom: none; border-left: 4px solid transparent; text-align: left; }
-      .tab.active { border-bottom: none; border-left-color: var(--lime); }
-    }
+    /* Who we work with */
+    .who-section { padding: 5rem 2rem; background: #fff; }
+    .who-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 3rem; }
+    .who-card { background: var(--gray-bg); border-top: 4px solid var(--lime); padding: 1.75rem 1.25rem; }
+    .who-icon { font-size: 32px; margin-bottom: 1rem; }
+    .who-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.2px; }
+    .who-body { font-size: 13px; color: var(--ink-mid); line-height: 1.6; }
+    @media (max-width: 900px) { .who-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 600px) { .who-grid { grid-template-columns: 1fr 1fr; } }
 
-    .panel { display: none; }
-    .panel.visible { display: block; }
-    .panel-grid {
-      display: grid; grid-template-columns: 1.5fr 1fr;
-      gap: 4rem; align-items: start;
-    }
-    .panel-eyebrow {
-      font-size: 11px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.12em; color: var(--lime-deep); margin-bottom: 1rem;
-    }
-    .panel-title {
-      font-size: clamp(32px, 4vw, 44px); font-weight: 800;
-      line-height: 1.15; letter-spacing: -1px;
-      margin-bottom: 1.5rem; color: var(--navy);
-    }
-    .panel-title .accent { color: var(--lime-deep); }
-    .panel-body {
-      font-size: 17px; line-height: 1.7;
-      color: var(--ink-mid); margin-bottom: 2rem;
-    }
-    .panel-benefits {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.25rem; margin-bottom: 2rem;
-    }
-    .panel-benefit {
-      padding-left: 16px; border-left: 3px solid var(--lime);
-    }
-    .panel-benefit-title {
-      font-size: 14px; font-weight: 700; color: var(--navy);
-      margin-bottom: 4px;
-    }
-    .panel-benefit-body {
-      font-size: 13px; line-height: 1.55; color: var(--ink-mid);
-    }
-    .examples-card {
-      background: var(--navy); color: #fff;
-      padding: 2rem;
-    }
-    .examples-eyebrow {
-      font-size: 11px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.12em; color: var(--lime); margin-bottom: 1.5rem;
-    }
-    .examples-title {
-      font-size: 18px; font-weight: 700; margin-bottom: 1.5rem;
-      letter-spacing: -0.3px;
-    }
-    .example-item {
-      font-size: 14px; line-height: 1.5;
-      color: rgba(255,255,255,0.9);
-      padding: 12px 0; border-bottom: 1px solid var(--border);
-    }
-    .example-item:last-child { border-bottom: none; }
-    .example-item::before {
-      content: '→ '; color: var(--lime); font-weight: 700;
-    }
-    @media (max-width: 800px) {
-      .panel-grid { grid-template-columns: 1fr; }
-      .panel-benefits { grid-template-columns: 1fr; }
-    }
+    /* Engagement options */
+    .engage-section { padding: 5rem 2rem; background: var(--gray-bg); }
+    .engage-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .engage-opt { background: #fff; padding: 2rem; border-left: 4px solid var(--lime); }
+    .engage-opt-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--lime-deep); margin-bottom: 0.75rem; }
+    .engage-opt-title { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 0.75rem; letter-spacing: -0.3px; }
+    .engage-opt-body { font-size: 14px; color: var(--ink-mid); line-height: 1.6; }
+    @media (max-width: 800px) { .engage-options { grid-template-columns: 1fr; } }
 
     /* Form */
     .form-section { background: var(--navy-deep); color: #fff; padding: 5rem 2rem; }
     .form-inner { max-width: 720px; margin: 0 auto; }
     .form-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--lime); margin-bottom: 1rem; display: block; }
-    .form-title {
-      font-size: clamp(32px, 4vw, 44px); font-weight: 800;
-      line-height: 1.15; letter-spacing: -1px; margin-bottom: 1rem;
-    }
+    .form-title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; line-height: 1.2; letter-spacing: -0.8px; margin-bottom: 1rem; color: #fff; }
     .form-title .accent { color: var(--lime); }
-    .form-sub {
-      font-size: 17px; color: rgba(255,255,255,0.8);
-      line-height: 1.65; margin-bottom: 3rem;
-    }
-    .form-row {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1rem; margin-bottom: 1rem;
-    }
-    .field-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1rem; }
-    .field-group label {
-      font-size: 12px; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--lime);
-    }
+    .form-sub { font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.75); margin-bottom: 2.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+    .field-group { margin-bottom: 1.25rem; }
+    .field-group label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); display: block; margin-bottom: 8px; }
     input[type="text"], input[type="email"], select, textarea {
-      width: 100%; font-size: 15px;
-      font-family: 'Inter', sans-serif;
-      padding: 14px 16px;
-      background: var(--navy); color: #fff;
-      border: 1px solid var(--border);
-      outline: none; transition: border-color 0.15s;
+      width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+      color: #fff; font-family: 'Inter', sans-serif; font-size: 15px;
+      padding: 14px 16px; outline: none; transition: border-color 0.15s;
     }
     input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.4); }
     input:focus, select:focus, textarea:focus { border-color: var(--lime); }
     select { color: rgba(255,255,255,0.7); }
     textarea { resize: vertical; min-height: 130px; }
-    .form-footer {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-top: 1.5rem; flex-wrap: wrap; gap: 1rem;
-    }
-    .form-note {
-      font-size: 12px; color: rgba(255,255,255,0.5);
-    }
+    .form-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .form-note { font-size: 12px; color: rgba(255,255,255,0.45); }
     @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
 
     /* Process */
-    .process-section { padding: 5rem 2rem; background: var(--gray-bg); }
-    .process-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; background: var(--border-dark);
-      border: 1px solid var(--border-dark);
-      margin-top: 3rem;
-    }
-    .process-cell {
-      background: #fff; padding: 2rem 1.75rem;
-    }
-    .process-num {
-      font-size: 36px; font-weight: 800; color: var(--lime-deep);
-      line-height: 1; margin-bottom: 1rem; letter-spacing: -1.5px;
-    }
-    .process-title {
-      font-size: 16px; font-weight: 700; color: var(--navy);
-      margin-bottom: 0.5rem;
-    }
-    .process-body { font-size: 13px; line-height: 1.55; color: var(--ink-mid); }
-    @media (max-width: 800px) { .process-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 500px) { .process-grid { grid-template-columns: 1fr; } }
+    .process-section { padding: 5rem 2rem; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border-dark); border: 1px solid var(--border-dark); margin-top: 3rem; }
+    .process-cell { background: #fff; padding: 2.5rem 1.75rem; }
+    .process-num { font-size: 48px; font-weight: 800; color: var(--lime-deep); line-height: 1; margin-bottom: 1rem; letter-spacing: -2px; }
+    .process-title { font-size: 18px; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy); }
+    .process-body { font-size: 14px; line-height: 1.6; color: var(--ink-mid); }
+    @media (max-width: 700px) { .process-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 450px) { .process-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
 <!-- TOP BAR -->
 <div class="topbar">
-  Based in Wageningen Food Valley · Working with WUR &amp; RMIT Vietnam · <a href="partner.html">Join the hive →</a>
+  From Farm to Value · Agrifood Technology for Emerging Agricultural Markets · <a href="partner.html">Work With Us →</a>
 </div>
 
 <!-- NAV -->
@@ -188,150 +86,84 @@
       <li><a href="how-we-work.html">How We Work</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="partner.html" class="active">Partner</a></li>
+      <li><a href="partner.html" class="active">Work With Us</a></li>
     </ul>
-    <a href="partner.html" class="nav-cta" style="background:var(--lime-bright);">Join the Hive</a>
+    <a href="partner.html" class="nav-cta">Book a Call</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="hero-eyebrow">Join the Hive</div>
-    <h1>The hive works because<br><span class="accent">the right bees</span><br>find each other.</h1>
-    <p>We work with three kinds of partners. Find yours below — and tell us what you're working on. We reply within two working days.</p>
+    <div class="hero-eyebrow">Work With Us</div>
+    <h1>Let's talk about<br>your <span class="accent">crop, chain<br>or challenge.</span></h1>
+    <p>We work with farmers, cooperatives, agribusinesses, technology partners, universities and investors. Tell us what you're working on.</p>
   </div>
 </section>
 
-<!-- AUDIENCES -->
-<section class="audiences-section">
+<!-- WHO WE WORK WITH — first -->
+<section class="who-section">
   <div class="section-inner">
-    <div class="tabs">
-      <button class="tab active" onclick="showPanel('farmers', this)">Farmers &amp; Co-ops</button>
-      <button class="tab" onclick="showPanel('buyers', this)">Buyers &amp; Brands</button>
-      <button class="tab" onclick="showPanel('funders', this)">Funders &amp; Investors</button>
-    </div>
+    <span class="eyebrow">Who We Work With</span>
+    <h2 class="section-title">Five types of partner.<br><span class="accent">One shared goal.</span></h2>
+    <p class="section-lead">Whether you're closer to the farm or closer to the market, there's a role for you in the value chain we're building.</p>
 
-    <!-- FARMERS -->
-    <div class="panel visible" id="panel-farmers">
-      <div class="panel-grid">
-        <div>
-          <div class="panel-eyebrow">For Farmers &amp; Cooperatives</div>
-          <h2 class="panel-title">Grow what<br>you <span class="accent">earn.</span></h2>
-          <p class="panel-body">You grow the crop. We bring the technology, data infrastructure, and connections to European buyers that turn your farm into a traceable, circular operation — without requiring you to become a tech expert.</p>
-
-          <div class="panel-benefits">
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">Automated monitoring</div>
-              <div class="panel-benefit-body">Fewer hours walking the field, earlier problem detection.</div>
-            </div>
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">Export market access</div>
-              <div class="panel-benefit-body">A digital farm record opens premium pricing and EU buyers.</div>
-            </div>
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">Second income stream</div>
-              <div class="panel-benefit-body">Turn the peel, pulp, and husk you discard into revenue.</div>
-            </div>
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">Compliance included</div>
-              <div class="panel-benefit-body">EUDR and GLOBALG.A.P. supported, not billed separately.</div>
-            </div>
-          </div>
-        </div>
-        <div class="examples-card">
-          <div class="examples-eyebrow">Good fit if you are...</div>
-          <div class="examples-title">A connected farmer collective.</div>
-          <div class="example-item">A smallholder cooperative with 20–500 farmers</div>
-          <div class="example-item">Export-oriented, targeting Middle East, EU, or Asia</div>
-          <div class="example-item">Growing citrus, cacao, coffee, mango, or coconut</div>
-          <div class="example-item">Facing compliance requirements from buyers</div>
-          <div class="example-item">Looking for income from crop waste streams</div>
-        </div>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-icon">🌱</div>
+        <div class="who-title">Farmers &amp; Cooperatives</div>
+        <div class="who-body">We build tools and platforms that work for smallholder farmers — giving you data, market access and new income from side streams.</div>
       </div>
-    </div>
-
-    <!-- BUYERS -->
-    <div class="panel" id="panel-buyers">
-      <div class="panel-grid">
-        <div>
-          <div class="panel-eyebrow">For Buyers &amp; Brands</div>
-          <h2 class="panel-title">Source with<br><span class="accent">confidence.</span></h2>
-          <p class="panel-body">You need traceable, compliant ingredients from emerging markets — and a story you can put on a label. We give you farm-level origin data, sustainability credentials, and direct access to smallholder networks that anonymous commodity channels cannot provide.</p>
-
-          <div class="panel-benefits">
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">Traceable ingredients</div>
-              <div class="panel-benefit-body">Citrus oil, cacao fiber, and more with full farm provenance.</div>
-            </div>
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">EUDR-ready</div>
-              <div class="panel-benefit-body">Supply chain documentation exportable on demand.</div>
-            </div>
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">Direct relationships</div>
-              <div class="panel-benefit-body">Cooperatives, not commodity middlemen.</div>
-            </div>
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">Real sustainability</div>
-              <div class="panel-benefit-body">Backed by data, not just claims.</div>
-            </div>
-          </div>
-        </div>
-        <div class="examples-card">
-          <div class="examples-eyebrow">Good fit if you are...</div>
-          <div class="examples-title">A buyer who values origin.</div>
-          <div class="example-item">A food ingredient buyer or flavor house</div>
-          <div class="example-item">A brand needing traceable, circular ingredients</div>
-          <div class="example-item">A retailer with supplier sustainability requirements</div>
-          <div class="example-item">An importer facing EUDR compliance pressure</div>
-          <div class="example-item">Interested in co-developing supply chains</div>
-        </div>
+      <div class="who-card">
+        <div class="who-icon">🏭</div>
+        <div class="who-title">Agribusinesses</div>
+        <div class="who-body">Exporters, processors and food companies that need traceable supply chains, EUDR data or circular ingredient sourcing.</div>
       </div>
-    </div>
-
-    <!-- FUNDERS -->
-    <div class="panel" id="panel-funders">
-      <div class="panel-grid">
-        <div>
-          <div class="panel-eyebrow">For Funders &amp; Investors</div>
-          <h2 class="panel-title">Back<br><span class="accent">the hive.</span></h2>
-          <p class="panel-body">We're building repeatable infrastructure for smallholder farmers in emerging markets — proven in cacao in Ecuador, live in citrus in Vietnam, and ready to scale to the next crop and country. The commercial model and the impact model are the same thing.</p>
-
-          <div class="panel-benefits">
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">Live deployments</div>
-              <div class="panel-benefit-body">Two crops, two continents, real farmers, real data.</div>
-            </div>
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">Research-backed</div>
-              <div class="panel-benefit-body">In partnership with WUR and RMIT University Vietnam.</div>
-            </div>
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">EU-aligned</div>
-              <div class="panel-benefit-body">EUDR, Farm to Fork, and SDGs 1, 12, 17 ready.</div>
-            </div>
-            <div class="panel-benefit">
-              <div class="panel-benefit-title">Dutch-eligible</div>
-              <div class="panel-benefit-body">DGGF, IDH, and Rabobank Foundation programs.</div>
-            </div>
-          </div>
-        </div>
-        <div class="examples-card">
-          <div class="examples-eyebrow">Good fit if you are...</div>
-          <div class="examples-title">A funder of real impact.</div>
-          <div class="example-item">A development finance institution (FMO, DGGF)</div>
-          <div class="example-item">An impact investor in agri-food or emerging markets</div>
-          <div class="example-item">An EU-funded program (Horizon, LIFE, DEAR)</div>
-          <div class="example-item">A foundation working on smallholder livelihoods</div>
-          <div class="example-item">A corporate with supply chain sustainability commitments</div>
-        </div>
+      <div class="who-card">
+        <div class="who-icon">🎓</div>
+        <div class="who-title">Universities</div>
+        <div class="who-body">Research collaboration, capstone project partnerships and joint development of crop science, AI and field technology. Active with WUR and RMIT.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🔧</div>
+        <div class="who-title">Technology Partners</div>
+        <div class="who-body">Hardware, sensor, robotics and software companies looking to embed their technology in a working agrifood value chain context.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">💼</div>
+        <div class="who-title">Investors</div>
+        <div class="who-body">Impact investors and development finance institutions aligned with smallholder agriculture, food security and circular value creation in emerging markets.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FORM -->
+<!-- HOW TO ENGAGE -->
+<section class="engage-section">
+  <div class="section-inner">
+    <span class="eyebrow">How to Start</span>
+    <h2 class="section-title">Not sure where to begin?<br><span class="accent">Here are three clear paths.</span></h2>
+    <div class="engage-options">
+      <div class="engage-opt">
+        <div class="engage-opt-label">For exporters &amp; cooperatives</div>
+        <div class="engage-opt-title">Free Traceability Assessment</div>
+        <div class="engage-opt-body">We review your current traceability setup and show you exactly what data you need for EUDR and buyer audits — and what you're missing.</div>
+      </div>
+      <div class="engage-opt">
+        <div class="engage-opt-label">For food companies &amp; buyers</div>
+        <div class="engage-opt-title">EUDR Readiness Scan</div>
+        <div class="engage-opt-body">A structured review of your supply chain's deforestation data position — with a clear action plan to close the gaps before the deadline.</div>
+      </div>
+      <div class="engage-opt">
+        <div class="engage-opt-label">For innovation partners &amp; investors</div>
+        <div class="engage-opt-title">Discovery Workshop</div>
+        <div class="engage-opt-body">A focused session to map circular value chain opportunities and identify where data infrastructure creates the most leverage for your crop or market.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
 <section class="form-section">
   <div class="form-inner">
     <span class="form-eyebrow">Get In Touch</span>
@@ -358,16 +190,18 @@
         <select id="type">
           <option value="">Select one</option>
           <option>Farmer or cooperative</option>
+          <option>Agribusiness or exporter</option>
           <option>Ingredient buyer or brand</option>
-          <option>Funder or investor</option>
-          <option>Researcher or academic partner</option>
+          <option>University or research partner</option>
+          <option>Technology partner</option>
+          <option>Investor or funder</option>
           <option>Something else</option>
         </select>
       </div>
     </div>
     <div class="field-group">
       <label for="message">What are you working on?</label>
-      <textarea id="message" placeholder="Tell us about your crop, your market, your challenge, or your organisation. The more context you give us, the better we can respond."></textarea>
+      <textarea id="message" placeholder="Tell us about your crop, your market, your challenge or your organisation. The more context you give us, the better we can respond."></textarea>
     </div>
     <div class="form-footer">
       <span class="form-note">We don't share your information with third parties.</span>
@@ -381,7 +215,6 @@
   <div class="section-inner">
     <span class="eyebrow">What Happens Next</span>
     <h2 class="section-title">A real process.<br><span class="accent">No black box.</span></h2>
-
     <div class="process-grid">
       <div class="process-cell">
         <div class="process-num">01</div>
@@ -396,12 +229,12 @@
       <div class="process-cell">
         <div class="process-num">03</div>
         <div class="process-title">We design</div>
-        <div class="process-body">A tailored proposal — scope, timeline, and how the model applies to your crop.</div>
+        <div class="process-body">A tailored proposal — scope, timeline, and how the model applies to your crop or market.</div>
       </div>
       <div class="process-cell">
         <div class="process-num">04</div>
         <div class="process-title">We build</div>
-        <div class="process-body">Together. The hive grows one farm, one crop, one market at a time.</div>
+        <div class="process-body">Together. From Farm to Value — one crop, one market, one partnership at a time.</div>
       </div>
     </div>
   </div>
@@ -412,7 +245,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.jpg" alt="Hyves.Tech">
+        <img src="logo.jpg" alt="Hyves.Tech" style="border-radius:50%; width:48px; height:48px; object-fit:cover;">
         <div class="footer-brand-name">Hyves<span style="color:var(--lime);">.</span>Tech</div>
         <p class="footer-tagline">When the hive works,<br>everyone benefits.</p>
       </div>
@@ -422,22 +255,22 @@
           <li><a href="about.html">About</a></li>
           <li><a href="how-we-work.html">How We Work</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="partner.html">Partner With Us</a></li>
+          <li><a href="partner.html">Work With Us</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Locations</h4>
+        <h4>Where We Work</h4>
         <ul>
-          <li>Ede-Wageningen</li>
-          <li>Ho Chi Minh City</li>
-          <li>Guayaquil</li>
+          <li>Ede-Wageningen, NL</li>
+          <li>Ho Chi Minh City, VN</li>
+          <li>West Africa</li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:info@hyves.tech">info@hyves.tech</a></li>
-          <li><a href="partner.html">Join the Hive</a></li>
+          <li><a href="partner.html">Book a Discovery Call</a></li>
         </ul>
       </div>
     </div>
@@ -447,15 +280,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-function showPanel(id, el) {
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('visible'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('panel-' + id).classList.add('visible');
-  el.classList.add('active');
-}
-</script>
 
 </body>
 </html>

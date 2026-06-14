@@ -513,3 +513,116 @@ section { padding: 5rem 2rem; }
 @media (max-width: 900px) {
   .nav-links { display: none; }
 }
+
+/* ============================================
+   ADDITIONS — homepage restructure
+   ============================================ */
+
+/* Award bar */
+.award-bar {
+  background: var(--lime);
+  color: var(--navy-deep);
+  padding: 12px 2rem;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.award-bar a { color: var(--navy-deep); text-decoration: underline; }
+
+/* Offer / pillar grid */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.offer-card {
+  background: #fff;
+  border: 1px solid var(--border-dark);
+  border-top: 4px solid var(--lime);
+  padding: 2rem;
+}
+.offer-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--lime-deep);
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+.offer-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.3px;
+}
+.offer-body {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-mid);
+  margin-bottom: 1.25rem;
+}
+.offer-list { list-style: none; }
+.offer-list li {
+  font-size: 13px;
+  color: var(--ink-mid);
+  padding: 6px 0 6px 14px;
+  position: relative;
+  border-top: 1px solid var(--border-dark);
+}
+.offer-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: var(--lime-deep);
+}
+
+/* Engage grid */
+.engage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.engage-card {
+  border: 1px solid var(--border-dark);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #fff;
+}
+.engage-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--lime-deep);
+}
+.engage-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.engage-desc {
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.55;
+  flex: 1;
+}
+.engage-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .offer-grid,
+  .engage-grid { grid-template-columns: 1fr; }
+}
